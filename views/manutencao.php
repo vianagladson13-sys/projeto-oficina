@@ -20,7 +20,7 @@
 
 
         <div class="manutencao-body">
- 
+
             <!-- EXPLICAÇÃO -->
             <div class="manutencao-info">
                 <i class="bi bi-info-circle"></i>
@@ -82,7 +82,6 @@
                 </button>
 
             </div>
-
 
             <!-- ================================================= -->
             <!-- CONTEÚDO PREVENTIVA -->
@@ -340,6 +339,13 @@
 
                 </div>
 
+
+
+                <button type="button" class="btn-selecionar-manutencao btn-selecionar-preventiva" onclick="selecionarManutencao('preventiva')">
+                    <i class="bi bi-check-circle"></i>
+                    <span>Selecionar manutenção preventiva</span>
+                </button>
+
             </div>
 
 
@@ -522,6 +528,13 @@
 
                 </div>
 
+
+
+                <button type="button" class="btn-selecionar-manutencao btn-selecionar-corretiva" onclick="selecionarManutencao('corretiva')">
+                    <i class="bi bi-check-circle"></i>
+                    <span>Selecionar manutenção corretiva</span>
+                </button>
+
             </div>
 
         </div>
@@ -530,48 +543,193 @@
 
 </div>
 
+<!-- ================================================= -->
+<!-- AGENDAMENTO -->
+<!-- ================================================= -->
 
+<div id="agendamento-manutencao" class="agendamento-manutencao">
+
+    <div class="agendamento-calendario">
+
+        <div class="agendamento-titulo">
+
+            <div class="agendamento-icone">
+                <i class="bi bi-calendar-check"></i>
+            </div>
+
+            <div>
+                <h3>Agendar manutenção</h3>
+
+                <p>
+                    Selecione uma data disponível para realizar o serviço.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="calendario-area">
+
+            <div class="campo-data">
+
+                <label for="data_manutencao">
+                    Data da manutenção
+                </label>
+
+                <input
+                    type="date"
+                    id="data_manutencao"
+                    name="data_manutencao">
+
+                <small>
+                    Escolha uma data disponível para o atendimento.
+                </small>
+
+            </div>
+
+
+            <div class="data-selecionada">
+
+                <i class="bi bi-calendar-event"></i>
+
+                <div>
+
+                    <span>Data selecionada</span>
+
+                    <strong id="texto-data">
+                        Nenhuma data selecionada
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- AGENDAMENTO DA MANUTENÇÃO -->
+<!-- O JavaScript move este bloco para a lista selecionada -->
 <script>
 
 function mostrarManutencao(tipo) {
-
     const preventiva = document.getElementById("conteudo-preventiva");
     const corretiva = document.getElementById("conteudo-corretiva");
-
     const botoes = document.querySelectorAll(".btn-manutencao");
 
-    // Esconde os dois conteúdos
+    if (tipo === "preventiva" && preventiva.classList.contains("ativo")) {
+        preventiva.classList.remove("ativo");
+        preventiva.classList.remove("manutencao-selecionada");
+        document.querySelector(".btn-preventiva").classList.remove("selecionado");
+        resetarBotaoSelecao("preventiva");
+        esconderAgendamento();
+        return;
+    }
+
+    if (tipo === "corretiva" && corretiva.classList.contains("ativo")) {
+        corretiva.classList.remove("ativo");
+        corretiva.classList.remove("manutencao-selecionada");
+        document.querySelector(".btn-corretiva").classList.remove("selecionado");
+        resetarBotaoSelecao("corretiva");
+        esconderAgendamento();
+        return;
+    }
+
     preventiva.classList.remove("ativo");
     corretiva.classList.remove("ativo");
 
-    // Remove seleção dos botões
-    botoes.forEach(function(botao) {
-        botao.classList.remove("selecionado");
+    // Limpa a seleção anterior ao trocar de tipo.
+    preventiva.classList.remove("manutencao-selecionada");
+    corretiva.classList.remove("manutencao-selecionada");
+
+    document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
+        btn.classList.remove("selecionado");
     });
 
+    resetarBotaoSelecao("preventiva");
+    resetarBotaoSelecao("corretiva");
 
-    // Mostra a opção escolhida
+    botoes.forEach(function(botao) { botao.classList.remove("selecionado"); });
+
+    esconderAgendamento();
+
     if (tipo === "preventiva") {
-
         preventiva.classList.add("ativo");
-
-        document
-            .querySelector(".btn-preventiva")
-            .classList.add("selecionado");
-
-    }
-
-
-    if (tipo === "corretiva") {
-
+        document.querySelector(".btn-preventiva").classList.add("selecionado");
+    } else {
         corretiva.classList.add("ativo");
+        document.querySelector(".btn-corretiva").classList.add("selecionado");
+    }
+}
 
-        document
-            .querySelector(".btn-corretiva")
-            .classList.add("selecionado");
+function selecionarManutencao(tipo) {
+    const agendamento = document.getElementById("agendamento-manutencao");
+    const lista = document.getElementById("conteudo-" + tipo);
+    const botao = document.querySelector(".btn-selecionar-" + tipo);
 
+    if (!agendamento || !lista || !botao) return;
+
+    if (lista.classList.contains("manutencao-selecionada")) {
+        lista.classList.remove("manutencao-selecionada");
+        botao.classList.remove("selecionado");
+        resetarBotaoSelecao(tipo);
+        esconderAgendamento();
+        return;
     }
 
+    document.querySelectorAll(".conteudo-manutencao").forEach(function(conteudo) {
+        conteudo.classList.remove("manutencao-selecionada");
+    });
+
+    document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
+        btn.classList.remove("selecionado");
+    });
+
+    lista.classList.add("manutencao-selecionada");
+    botao.classList.add("selecionado");
+    botao.querySelector("span").textContent = tipo === "preventiva"
+        ? "Manutenção preventiva selecionada"
+        : "Manutenção corretiva selecionada";
+
+    // Move o calendário para ficar imediatamente abaixo da lista escolhida.
+    lista.appendChild(agendamento);
+    agendamento.classList.add("ativo");
+}
+
+function resetarBotaoSelecao(tipo) {
+    const botao = document.querySelector(".btn-selecionar-" + tipo);
+    if (!botao) return;
+    botao.querySelector("span").textContent = tipo === "preventiva"
+        ? "Selecionar manutenção preventiva"
+        : "Selecionar manutenção corretiva";
+}
+
+function esconderAgendamento() {
+    const agendamento = document.getElementById("agendamento-manutencao");
+    if (agendamento) agendamento.classList.remove("ativo");
+}
+
+const campoData = document.getElementById("data_manutencao");
+const textoData = document.getElementById("texto-data");
+
+if (campoData && textoData) {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+    const dia = String(hoje.getDate()).padStart(2, "0");
+    campoData.min = `${ano}-${mes}-${dia}`;
+
+    campoData.addEventListener("change", function() {
+        if (!this.value) {
+            textoData.textContent = "Nenhuma data selecionada";
+            return;
+        }
+        const partes = this.value.split("-");
+        textoData.textContent = `${partes[2]}/${partes[1]}/${partes[0]}`;
+    });
 }
 
 </script>

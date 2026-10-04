@@ -1,19 +1,23 @@
 :root {
+
     --azul-escuro: #071a33;
     --azul: #0b5ed7;
     --azul-hover: #084298;
     --azul-claro: #eaf3ff;
+
     --cinza-borda: #d7dee7;
     --cinza-texto: #667085;
+
     --branco: #ffffff;
 }
 
 
 /* =========================================================
    PÁGINA
-========================================================= */
+   ========================================================= */
 
 .manutencao-page {
+
     min-height: calc(100vh - 70px);
 
     display: flex;
@@ -32,13 +36,14 @@
 
 /* =========================================================
    PAINEL PRINCIPAL
-========================================================= */
+   ========================================================= */
 
 #painel-manutencao {
+
     width: 100%;
     max-width: 760px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     border: 1px solid var(--cinza-borda);
 
@@ -52,7 +57,7 @@
 
 /* =========================================================
    CABEÇALHO
-========================================================= */
+   ========================================================= */
 
 .manutencao-header {
 
@@ -71,7 +76,7 @@
         #0b315c
     );
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -88,7 +93,7 @@
 
     border-radius: 12px;
 
-    background: rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.12);
 
     color: #5fa8ff;
 
@@ -100,7 +105,7 @@
 
     margin: 0;
 
-    color: #ffffff;
+    color: var(--branco);
 
     font-size: 21px;
 
@@ -112,7 +117,7 @@
 
     margin: 5px 0 0;
 
-    color: rgba(255,255,255,0.70);
+    color: rgba(255, 255, 255, 0.70);
 
     font-size: 12px;
 }
@@ -120,7 +125,7 @@
 
 /* =========================================================
    CORPO
-========================================================= */
+   ========================================================= */
 
 .manutencao-body {
 
@@ -130,7 +135,7 @@
 
 /* =========================================================
    INFORMAÇÃO
-========================================================= */
+   ========================================================= */
 
 .manutencao-info {
 
@@ -169,7 +174,7 @@
 
 /* =========================================================
    BOTÕES DE ESCOLHA
-========================================================= */
+   ========================================================= */
 
 .opcoes-manutencao {
 
@@ -184,7 +189,6 @@
 .btn-manutencao {
 
     width: 100%;
-
     min-height: 90px;
 
     display: flex;
@@ -215,8 +219,8 @@
 
 
 /* =========================================================
-   ÍCONE
-========================================================= */
+   ÍCONE DA MANUTENÇÃO
+   ========================================================= */
 
 .icone-manutencao {
 
@@ -236,8 +240,8 @@
 
 
 /* =========================================================
-   TEXTO
-========================================================= */
+   TEXTO DA MANUTENÇÃO
+   ========================================================= */
 
 .texto-manutencao {
 
@@ -268,7 +272,7 @@
 
 /* =========================================================
    SETA
-========================================================= */
+   ========================================================= */
 
 .seta-manutencao {
 
@@ -281,8 +285,8 @@
 
 
 /* =========================================================
-   PREVENTIVA
-========================================================= */
+   MANUTENÇÃO PREVENTIVA
+   ========================================================= */
 
 .btn-preventiva {
 
@@ -298,7 +302,7 @@
 
     background: var(--azul);
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -309,7 +313,7 @@
 
     border-color: var(--azul);
 
-    box-shadow: 0 8px 20px rgba(11,94,215,0.15);
+    box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15);
 }
 
 
@@ -323,8 +327,8 @@
 
 
 /* =========================================================
-   CORRETIVA
-========================================================= */
+   MANUTENÇÃO CORRETIVA
+   ========================================================= */
 
 .btn-corretiva {
 
@@ -340,7 +344,7 @@
 
     background: #071a33;
 
-    color: #ffffff;
+    color: var(--branco);
 }
 
 
@@ -351,7 +355,7 @@
 
     border-color: #071a33;
 
-    box-shadow: 0 8px 20px rgba(7,26,51,0.12);
+    box-shadow: 0 8px 20px rgba(7, 26, 51, 0.12);
 }
 
 
@@ -366,7 +370,7 @@
 
 /* =========================================================
    CONTEÚDO DAS MANUTENÇÕES
-========================================================= */
+   ========================================================= */
 
 .conteudo-manutencao {
 
@@ -388,24 +392,41 @@
 }
 
 
+.conteudo-manutencao.manutencao-selecionada {
+
+    border: 1px solid var(--azul);
+
+    border-radius: 10px;
+
+    padding: 25px;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DO CONTEÚDO
+   ========================================================= */
+
 @keyframes aparecer {
 
     from {
+
         opacity: 0;
+
         transform: translateY(-8px);
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
     }
-
 }
 
 
 /* =========================================================
    TÍTULO DO CONTEÚDO
-========================================================= */
+   ========================================================= */
 
 .titulo-conteudo {
 
@@ -425,6 +446,7 @@
     height: 45px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -472,7 +494,7 @@
 
 /* =========================================================
    GRUPO DE TAREFAS
-========================================================= */
+   ========================================================= */
 
 .grupo-tarefas {
 
@@ -489,6 +511,7 @@
 .grupo-tarefas h4 {
 
     display: flex;
+
     align-items: center;
 
     gap: 8px;
@@ -513,7 +536,7 @@
 
 /* =========================================================
    TAREFA
-========================================================= */
+   ========================================================= */
 
 .tarefa {
 
@@ -527,7 +550,7 @@
 
     margin-bottom: 8px;
 
-    background: #ffffff;
+    background: var(--branco);
 
     border: 1px solid #e3e8ef;
 
@@ -572,8 +595,8 @@
 
 
 /* =========================================================
-   CHECK / ÍCONE DA TAREFA
-========================================================= */
+   CHECK DA TAREFA
+   ========================================================= */
 
 .check-tarefa {
 
@@ -583,6 +606,7 @@
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -605,8 +629,489 @@
 
 
 /* =========================================================
+   BOTÃO SELECIONAR MANUTENÇÃO
+   ========================================================= */
+
+.btn-selecionar-manutencao {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: var(--branco);
+
+    color: var(--azul);
+
+    border: 2px solid var(--azul);
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.btn-selecionar-manutencao:hover {
+
+    background: var(--azul);
+
+    color: var(--branco);
+
+    box-shadow: 0 6px 15px rgba(11, 94, 215, 0.18);
+}
+
+
+.btn-selecionar-manutencao i {
+
+    font-size: 18px;
+}
+
+
+.btn-selecionar-manutencao.selecionado {
+
+    background: var(--azul);
+
+    border-color: var(--azul);
+
+    color: var(--branco);
+}
+
+
+/* =========================================================
+   AGENDAMENTO
+   ========================================================= */
+
+.agendamento-manutencao {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    animation: aparecerCalendario 0.35s ease;
+}
+
+
+.agendamento-manutencao.ativo {
+
+    display: block;
+}
+
+
+/* =========================================================
+   CARD DO CALENDÁRIO
+   ========================================================= */
+
+.agendamento-calendario {
+
+    width: 100%;
+
+    padding: 30px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--cinza-borda);
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(7, 26, 51, 0.08);
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CALENDÁRIO
+   ========================================================= */
+
+.agendamento-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #e5eaf0;
+}
+
+
+.agendamento-icone {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--azul);
+
+    color: var(--branco);
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    box-shadow: 0 5px 15px rgba(11, 94, 215, 0.20);
+}
+
+
+.agendamento-titulo h3 {
+
+    margin: 0;
+
+    color: var(--azul-escuro);
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+.agendamento-titulo p {
+
+    margin: 5px 0 0;
+
+    color: var(--cinza-texto);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ÁREA DO CALENDÁRIO
+   ========================================================= */
+
+.calendario-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.calendario-area label {
+
+    color: var(--azul-escuro);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CAMPO DA DATA
+   ========================================================= */
+
+.campo-data {
+
+    width: 100%;
+}
+
+
+.campo-data input[type="date"] {
+
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 16px;
+
+    background: #f8fafc;
+
+    color: var(--azul-escuro);
+
+    border: 1px solid var(--cinza-borda);
+
+    border-radius: 11px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.campo-data input[type="date"]:hover {
+
+    border-color: var(--azul);
+}
+
+
+.campo-data input[type="date"]:focus {
+
+    background: var(--branco);
+
+    border-color: var(--azul);
+
+    box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.10);
+}
+
+
+/* =========================================================
+   ÍCONE NATIVO DO CALENDÁRIO
+   ========================================================= */
+
+.campo-data input[type="date"]::-webkit-calendar-picker-indicator {
+
+    cursor: pointer;
+
+    width: 20px;
+
+    height: 20px;
+
+    opacity: 0.75;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.campo-data input[type="date"]::-webkit-calendar-picker-indicator:hover {
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TEXTO DE AJUDA
+   ========================================================= */
+
+.calendario-ajuda {
+
+    margin-top: 8px;
+
+    color: var(--cinza-texto);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.calendario-ajuda i {
+
+    margin-right: 5px;
+
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   DATA SELECIONADA
+   ========================================================= */
+
+.data-selecionada {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: var(--azul-claro);
+
+    border: 1px solid #c9def8;
+
+    border-radius: 10px;
+
+    color: var(--azul-escuro);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.data-selecionada.ativo {
+
+    display: flex;
+}
+
+
+.data-selecionada > i {
+
+    color: var(--azul);
+
+    font-size: 22px;
+}
+
+
+.data-selecionada span {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--cinza-texto);
+
+    font-size: 12px;
+}
+
+
+.data-selecionada strong {
+
+    display: block;
+
+    color: var(--azul-escuro);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BOTÃO CONFIRMAR AGENDAMENTO
+   ========================================================= */
+
+.btn-confirmar-agendamento {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--azul);
+
+    color: var(--branco);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.btn-confirmar-agendamento:hover {
+
+    background: var(--azul-hover);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 16px rgba(11, 94, 215, 0.20);
+}
+
+
+.btn-confirmar-agendamento:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DO CALENDÁRIO
+   ========================================================= */
+
+@keyframes aparecerCalendario {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(12px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
    RESPONSIVO
-========================================================= */
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .agendamento-calendario {
+
+        padding: 22px;
+    }
+
+
+    .agendamento-titulo {
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .agendamento-icone {
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 20px;
+    }
+
+
+    .agendamento-titulo h3 {
+
+        font-size: 18px;
+    }
+
+
+    .agendamento-titulo p {
+
+        font-size: 12px;
+    }
+
+
+    .campo-data input[type="date"] {
+
+        height: 52px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
 
 @media (max-width: 576px) {
 
@@ -657,4 +1162,63 @@
         padding: 12px;
     }
 
+
+    .agendamento-calendario {
+
+        padding: 20px;
+    }
+
+
+    .agendamento-titulo {
+
+        gap: 10px;
+    }
+
+
+    .agendamento-icone {
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+
+    .agendamento-titulo h3 {
+
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .agendamento-calendario {
+
+        padding: 18px;
+    }
+
+
+    .agendamento-titulo p {
+
+        font-size: 11px;
+    }
+
+
+    .btn-selecionar-manutencao {
+
+        font-size: 13px;
+    }
+
+
+    .campo-data input[type="date"] {
+
+        height: 50px;
+
+        font-size: 14px;
+    }
 }
