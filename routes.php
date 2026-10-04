@@ -10,7 +10,8 @@ $paginasValidas = [
     "produtos" => __DIR__ . "/views/produto.php",
     "clientes" => __DIR__ . "/views/cliente.php",
     "historia" => __DIR__ . "/views/historia.php",
-     "manutencao" => __DIR__ . "/views/manutencao.php",
+    "manutencao" => __DIR__ . "/views/manutencao.php",
+    "aconpanhamento" => __DIR__ . "/views/aconpanhamento.php",
 ];
 
 // Capturar a página informada na url 

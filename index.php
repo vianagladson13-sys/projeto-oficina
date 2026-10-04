@@ -25,7 +25,7 @@
     $paginasPublicas = [
         "landing" => __DIR__ . "/views/landing.php",
         "login" => __DIR__ . "/views/login.php",
-         "cliente" => __DIR__ . "/views/cliente.php",
+        "cliente" => __DIR__ . "/views/cliente.php",
     ];
 
     // Verifica se é uma página independente
@@ -61,6 +61,11 @@
                         Clientes
                     </a>
 
+                    <a href="index.php?page=aconpanhamento"
+                        class="nav-link <?= $page === 'aconpanhamento' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Aconpanhamento
+                    </a>
+
                     <a href="index.php?page=manutencao"
                         class="nav-link <?= $page === 'manutencao' ? 'text-white fw-bold' : 'text-white-50' ?>">
                         Manutenção
@@ -70,7 +75,6 @@
                         class="nav-link <?= $page === 'historia' ? 'text-white fw-bold' : 'text-white-50' ?>">
                         Sobre nós
                     </a>
-
 
 
                     <a href="index.php?page=landing"

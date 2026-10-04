@@ -249,7 +249,7 @@
                                 o andamento do serviço.
                             </p>
 
-                            <a href="index.php?page=produtos">
+                            <a href="index.php?page=aconpanhamento">
                                 ACOMPANHAR AGORA →
                             </a>
 
