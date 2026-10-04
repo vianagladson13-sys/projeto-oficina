@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contagem360</title>
+    <title>Cadastros de Veiculos</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -25,6 +25,7 @@
     $paginasPublicas = [
         "landing" => __DIR__ . "/views/landing.php",
         "login" => __DIR__ . "/views/login.php",
+         "cliente" => __DIR__ . "/views/cliente.php",
     ];
 
     // Verifica se é uma página independente
@@ -43,22 +44,34 @@
 
                 <h1 class="h3 mb-3 mb-md-0">
                     <a href="index.php?page=home" class="text-white text-decoration-none">
-                        Contagem360
+                        Mecanica MF
                     </a>
                 </h1>
 
                 <!-- Menu principal -->
                 <nav class="nav">
 
-                    <a href="index.php?page=landing"
-                        class="nav-link <?= $page === 'landing' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Inicio
+                    <a href="index.php?page=produtos"
+                        class="nav-link <?= $page === 'produtos' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Serviços
                     </a>
 
-                    <a href="index.php?page=eventos"
-                        class="nav-link <?= $page === 'eventos' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Eventos
+                    <a href="index.php?page=cliente"
+                        class="nav-link <?= $page === 'cliente' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Clientes
                     </a>
+
+                    <a href="index.php?page=manutencao"
+                        class="nav-link <?= $page === 'manutencao' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Manutenção
+                    </a>
+
+                    <a href="index.php?page=historia"
+                        class="nav-link <?= $page === 'historia' ? 'text-white fw-bold' : 'text-white-50' ?>">
+                        Sobre nós
+                    </a>
+
+
 
                     <a href="index.php?page=landing"
                         class="nav-link <?= $page === 'landing' ? 'text-white fw-bold' : 'text-white-50' ?>">
@@ -82,6 +95,14 @@
 
     </main>
 
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+
+        <p class="mb-0">
+            Cadastros De Veiculos e Serviços
+        </p>
+
+    </footer>
 
     <!-- JavaScript do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

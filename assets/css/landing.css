@@ -1,0 +1,1198 @@
+/* =========================================================
+   MECANICA MF
+   LANDING PAGE
+   PADRÃO VISUAL AZUL
+   ========================================================= */
+
+
+/* =========================================================
+   CORES PRINCIPAIS
+   ========================================================= */
+
+:root {
+    --mf-navy: #061b49;
+    --mf-blue-dark: #0759b8;
+    --mf-blue: #0d6efd;
+    --mf-blue-light: #93c5fd;
+
+    --mf-white: #ffffff;
+    --mf-text: #e2e8f0;
+    --mf-muted: #94a3b8;
+
+    --mf-dark: #020817;
+    --mf-card: #0f172a;
+    --mf-card-light: #1e293b;
+
+    --mf-border: rgba(255, 255, 255, 0.12);
+    --mf-shadow: rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    background: var(--mf-navy) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+    color: var(--mf-white) !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+    color: var(--mf-blue-light);
+}
+
+.navbar .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.35);
+    color: var(--mf-white);
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+.navbar .btn-outline-light:hover {
+    background: var(--mf-blue);
+    border-color: var(--mf-blue);
+    color: var(--mf-white);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.mw-hero {
+    position: relative;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #020817 0%,
+            #061b49 55%,
+            #0759b8 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* detalhe visual */
+
+.mw-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -220px;
+    right: -150px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(13, 110, 253, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* segundo detalhe */
+
+.mw-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    bottom: -180px;
+    left: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(7, 89, 184, 0.20);
+
+    pointer-events: none;
+}
+
+
+/* overlay */
+
+.mw-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 8, 23, 0.90),
+            rgba(6, 27, 73, 0.70),
+            rgba(6, 27, 73, 0.30)
+        );
+
+    pointer-events: none;
+}
+
+
+/* conteúdo */
+
+.mw-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.mw-hero-content {
+    max-width: 760px;
+    padding: 90px 0;
+}
+
+
+/* etiqueta */
+
+.mw-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--mf-blue-light);
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* título */
+
+.mw-hero h1 {
+    margin: 0;
+
+    color: var(--mf-white);
+
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+
+    font-weight: 900;
+
+    line-height: 0.98;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+.mw-hero h1 span {
+    color: var(--mf-blue-light);
+}
+
+
+/* descrição */
+
+.mw-hero p {
+    max-width: 600px;
+
+    margin: 25px 0 30px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+   ========================================================= */
+
+.mw-hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+
+/* botão principal */
+
+.btn-mw-primary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mf-blue-dark),
+            var(--mf-blue)
+        );
+
+    color: var(--mf-white) !important;
+
+    font-size: 0.88rem;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(7, 89, 184, 0.25);
+}
+
+.btn-mw-primary:hover {
+    color: var(--mf-white) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(7, 89, 184, 0.35);
+}
+
+
+/* botão secundário */
+
+.btn-mw-outline {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: var(--mf-white) !important;
+
+    font-size: 0.88rem;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(5px);
+}
+
+.btn-mw-outline:hover {
+    border-color: var(--mf-blue);
+
+    background: var(--mf-blue);
+
+    color: var(--mf-white) !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SERVIÇOS PRINCIPAIS
+   ========================================================= */
+
+.mw-services {
+    width: 100%;
+
+    padding: 85px 0;
+
+    background: #f8fafc;
+}
+
+
+/* título da seção */
+
+.mw-section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 55px;
+
+    text-align: center;
+}
+
+.mw-section-title span {
+    width: 45px;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background: var(--mf-blue);
+}
+
+.mw-section-title h2 {
+    margin: 0;
+
+    color: var(--mf-navy);
+
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   CARDS DOS SERVIÇOS
+   ========================================================= */
+
+.mw-card {
+    height: 100%;
+
+    min-height: 330px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 32px 27px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    background: var(--mf-white);
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.mw-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(13, 110, 253, 0.35);
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   ÍCONE DO CARD
+   ========================================================= */
+
+.mw-card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mf-navy),
+            var(--mf-blue-dark)
+        );
+
+    color: var(--mf-white);
+
+    box-shadow:
+        0 8px 18px rgba(7, 89, 184, 0.20);
+}
+
+.mw-card-icon i {
+    font-size: 1.55rem;
+}
+
+
+/* =========================================================
+   INDICADOR 75%
+   ========================================================= */
+
+.mw-percent {
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    color: var(--mf-white);
+}
+
+
+/* =========================================================
+   TEXTO DOS CARDS
+   ========================================================= */
+
+.mw-card h3 {
+    margin: 0 0 14px;
+
+    color: var(--mf-navy);
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    text-transform: uppercase;
+}
+
+.mw-card p {
+    margin: 0 0 22px;
+
+    color: #64748b;
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LINK DOS CARDS
+   ========================================================= */
+
+.mw-card a {
+    display: inline-block;
+
+    margin-top: auto;
+
+    color: var(--mf-blue-dark);
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+}
+
+.mw-card a:hover {
+    color: var(--mf-blue);
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   DIAGNÓSTICO VIA CHAT - LANDING
+   ========================================================= */
+
+.mf-servicos-home {
+    width: 100%;
+
+    padding: 70px 0;
+
+    background: var(--mf-navy);
+
+    overflow: hidden;
+}
+
+.mf-servicos-home > .container {
+    max-width: 1180px;
+}
+
+
+/* =========================================================
+   ESTRUTURA
+   ========================================================= */
+
+.mf-feature-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.85fr)
+        minmax(420px, 1.15fr);
+
+    align-items: center;
+
+    gap: 55px;
+
+    padding: 45px 0;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.mf-feature-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.mf-feature-label {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--mf-blue-light);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.mf-feature-content h2 {
+    margin: 0;
+
+    color: var(--mf-white);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LINHA AZUL
+   ========================================================= */
+
+.mf-feature-line {
+    width: 55px;
+    height: 4px;
+
+    margin: 18px 0;
+
+    border-radius: 20px;
+
+    background: var(--mf-blue);
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.mf-feature-content p {
+    max-width: 470px;
+
+    margin: 0 0 25px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÃO DO DIAGNÓSTICO
+   ========================================================= */
+
+.mf-btn-primary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 46px;
+
+    padding: 12px 23px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mf-blue-dark),
+            var(--mf-blue)
+        );
+
+    color: var(--mf-white) !important;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 8px 20px rgba(7, 89, 184, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.mf-btn-primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--mf-navy),
+            var(--mf-blue-dark)
+        );
+
+    color: var(--mf-white) !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.mf-btn-primary i {
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   PREVIEW
+   ========================================================= */
+
+.mf-feature-card {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CARD DO CHAT
+   ========================================================= */
+
+.mf-chat-preview {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    min-height: 310px;
+
+    margin-left: auto;
+
+    padding: 25px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #020817
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.30);
+
+    overflow: hidden;
+}
+
+
+/* detalhe azul */
+
+.mf-chat-preview::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(13, 110, 253, 0.12);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CHAT
+   ========================================================= */
+
+.mf-chat-header {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mf-chat-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--mf-blue-dark);
+
+    color: var(--mf-white);
+
+    box-shadow:
+        0 5px 15px rgba(7, 89, 184, 0.30);
+}
+
+.mf-chat-header strong {
+    display: block;
+
+    color: var(--mf-white);
+
+    font-size: 0.95rem;
+}
+
+.mf-chat-header small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--mf-muted);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   MENSAGENS
+   ========================================================= */
+
+.mf-chat-message {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 78%;
+
+    margin-bottom: 13px;
+
+    padding: 11px 14px;
+
+    border-radius: 10px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.45;
+}
+
+
+/* mensagem da oficina */
+
+.mf-message-system {
+    margin-right: auto;
+
+    background: var(--mf-card-light);
+
+    color: var(--mf-text);
+
+    border-bottom-left-radius: 3px;
+}
+
+
+/* mensagem do cliente */
+
+.mf-message-client {
+    margin-left: auto;
+
+    background: var(--mf-blue-dark);
+
+    color: var(--mf-white);
+
+    border-bottom-right-radius: 3px;
+}
+
+
+/* =========================================================
+   INDICADOR DE DIGITAÇÃO
+   ========================================================= */
+
+.mf-chat-dots {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    width: fit-content;
+
+    margin-top: 4px;
+
+    padding: 9px 12px;
+
+    border-radius: 12px;
+
+    background: var(--mf-card-light);
+}
+
+.mf-chat-dots span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--mf-muted);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #020817,
+            var(--mf-navy)
+        ) !important;
+}
+
+footer h6 {
+    color: var(--mf-white);
+}
+
+footer h6 i {
+    color: var(--mf-blue-light);
+}
+
+footer p,
+footer a {
+    line-height: 1.6;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.65) !important;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--mf-blue-light) !important;
+}
+
+
+/* =========================================================
+   LINHA DO RODAPÉ
+   ========================================================= */
+
+footer .border-top {
+    border-color:
+        rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   MINI MAPA
+   ========================================================= */
+
+footer iframe {
+    display: block;
+
+    width: 150px;
+    height: 80px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    filter: saturate(0.75);
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+footer .bi-instagram,
+footer .bi-facebook,
+footer .bi-youtube,
+footer .bi-whatsapp {
+    color: var(--mf-blue-light);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    /* HERO */
+
+    .mw-hero {
+        min-height: 580px;
+    }
+
+    .mw-hero-content {
+        padding: 75px 0;
+    }
+
+
+    /* SERVIÇOS */
+
+    .mw-services {
+        padding: 65px 0;
+    }
+
+    .mw-section-title {
+        margin-bottom: 40px;
+    }
+
+
+    /* DIAGNÓSTICO */
+
+    .mf-servicos-home {
+        padding: 55px 0;
+    }
+
+    .mf-feature-row {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 40px 0;
+    }
+
+    .mf-feature-content {
+        text-align: center;
+    }
+
+    .mf-feature-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mf-feature-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mf-chat-preview {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+
+    /* HERO */
+
+    .mw-hero {
+        min-height: auto;
+    }
+
+    .mw-hero-content {
+        padding: 65px 15px;
+    }
+
+    .mw-label {
+        font-size: 0.72rem;
+
+        letter-spacing: 1.4px;
+    }
+
+    .mw-hero h1 {
+        font-size: 2.65rem;
+
+        letter-spacing: -0.5px;
+    }
+
+    .mw-hero p {
+        font-size: 0.92rem;
+    }
+
+
+    /* BOTÕES */
+
+    .mw-hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn-mw-primary,
+    .btn-mw-outline {
+        width: 100%;
+    }
+
+
+    /* SERVIÇOS */
+
+    .mw-services {
+        padding: 50px 15px;
+    }
+
+    .mw-section-title {
+        gap: 10px;
+
+        margin-bottom: 30px;
+    }
+
+    .mw-section-title span {
+        width: 25px;
+    }
+
+    .mw-section-title h2 {
+        font-size: 1.45rem;
+    }
+
+    .mw-card {
+        min-height: 300px;
+
+        padding: 26px 22px;
+    }
+
+
+    /* DIAGNÓSTICO */
+
+    .mf-servicos-home {
+        padding: 40px 15px;
+    }
+
+    .mf-feature-row {
+        padding: 30px 0;
+
+        gap: 28px;
+    }
+
+    .mf-feature-content h2 {
+        font-size: 2rem;
+    }
+
+    .mf-feature-content p {
+        font-size: 0.92rem;
+    }
+
+    .mf-btn-primary {
+        width: 100%;
+    }
+
+    .mf-chat-preview {
+        min-height: 280px;
+
+        padding: 18px;
+    }
+
+    .mf-chat-message {
+        max-width: 88%;
+
+        font-size: 0.82rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        text-align: left;
+    }
+
+    footer iframe {
+        width: 130px;
+        height: 75px;
+    }
+}

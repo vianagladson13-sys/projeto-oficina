@@ -1,0 +1,714 @@
+
+/* =========================================================
+   LOGIN.CSS
+   MECANICA MF
+   VISUAL PROFISSIONAL DE OFICINA MECÂNICA
+   ========================================================= */
+
+:root {
+    --azul-escuro: #071a33;
+    --azul: #0b5ed7;
+    --azul-claro: #eaf3ff;
+    --azul-hover: #084298;
+
+    --cinza-fundo: #eef2f6;
+    --cinza-borda: #d7dee7;
+    --cinza-texto: #667085;
+
+    --branco: #ffffff;
+    --preto: #17202a;
+
+    --verde: #198754;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(11, 94, 215, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 255, 255, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #061525 0%,
+            #09294d 45%,
+            #071a33 100%
+        );
+
+    color: var(--preto);
+}
+
+
+/* =========================================================
+   ÁREA DE LOGIN
+   ========================================================= */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 15px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*
+   Elementos decorativos do fundo
+*/
+
+.login-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 50%;
+
+    top: -180px;
+    left: -160px;
+}
+
+.login-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    right: -250px;
+    bottom: -250px;
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+   ========================================================= */
+
+.login-card {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 18px;
+
+    padding: 40px 38px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.30),
+        0 5px 15px rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+}
+
+
+/*
+   Barra superior do card
+*/
+
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #0b5ed7,
+        #198754,
+        #0b5ed7
+    );
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.logo-contagem {
+    display: inline-block;
+
+    color: var(--azul-escuro);
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.logo-contagem:hover {
+    color: var(--azul);
+}
+
+.logo-contagem-text {
+    display: block;
+
+    font-size: 29px;
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    text-transform: uppercase;
+}
+
+.logo-subtitle {
+    margin-top: 5px;
+
+    color: var(--cinza-texto);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   ÍCONE DE USUÁRIO
+   ========================================================= */
+
+.login-icon {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        145deg,
+        #eaf3ff,
+        #dceaff
+    );
+
+    border: 1px solid #c9dcf5;
+
+    color: var(--azul);
+
+    font-size: 40px;
+
+    box-shadow:
+        0 8px 20px rgba(11, 94, 215, 0.12);
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.login-title {
+    margin: 0;
+
+    color: var(--azul-escuro);
+
+    font-size: 27px;
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+}
+
+.login-description {
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    color: var(--cinza-texto);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.form-label {
+    color: #344054;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.input-group {
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+.input-group-text {
+    width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f7fa;
+
+    color: var(--azul);
+
+    border: 1px solid var(--cinza-borda);
+
+    border-right: 0;
+}
+
+.form-control {
+    height: 48px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--cinza-borda);
+
+    color: #1d2939;
+
+    font-size: 14px;
+
+    box-shadow: none !important;
+}
+
+.form-control::placeholder {
+    color: #98a2b3;
+}
+
+.form-control:focus {
+    border-color: var(--azul);
+
+    background: #ffffff;
+}
+
+.input-group:focus-within {
+    box-shadow:
+        0 0 0 3px rgba(11, 94, 215, 0.10);
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--azul);
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   ESQUECI SENHA
+   ========================================================= */
+
+.forgot-password {
+    color: var(--azul);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.forgot-password:hover {
+    color: var(--azul-hover);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BOTÃO MOSTRAR SENHA
+   ========================================================= */
+
+.btn-password {
+    background: #ffffff;
+
+    color: #667085;
+
+    border: 1px solid var(--cinza-borda);
+
+    border-left: 0;
+
+    transition: 0.2s ease;
+}
+
+.btn-password:hover {
+    background: #f5f7fa;
+
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.form-check-input {
+    cursor: pointer;
+
+    border-color: #b8c2cc;
+}
+
+.form-check-input:checked {
+    background-color: var(--azul);
+
+    border-color: var(--azul);
+}
+
+.form-check-label {
+    cursor: pointer;
+
+    color: #667085;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTÃO ENTRAR
+   ========================================================= */
+
+.btn-login {
+    height: 50px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #0b5ed7,
+        #084298
+    );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    box-shadow:
+        0 8px 18px rgba(11, 94, 215, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn-login:hover {
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #084298,
+        #062d68
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(11, 94, 215, 0.32);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 5px 12px rgba(11, 94, 215, 0.20);
+}
+
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+#mensagem {
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CADASTRO
+   ========================================================= */
+
+.register-area {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eaecf0;
+
+    color: #667085;
+
+    font-size: 13px;
+}
+
+.register-link {
+    color: var(--azul);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.register-link:hover {
+    color: var(--azul-hover);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DIVISOR
+   ========================================================= */
+
+.login-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 24px 0;
+
+    color: #98a2b3;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #eaecf0;
+}
+
+.login-divider span {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   VOLTAR
+   ========================================================= */
+
+.back-link {
+    color: #667085;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.login-footer {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 12px;
+}
+
+.footer-brand {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.footer-brand strong {
+    color: #ffffff;
+
+    font-weight: 800;
+}
+
+.login-footer p {
+    margin-top: 5px;
+
+    margin-bottom: 0;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+.login-card {
+    animation: entradaLogin 0.45s ease-out;
+}
+
+@keyframes entradaLogin {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .login-page {
+        padding: 25px 12px;
+    }
+
+    .login-card {
+        padding: 32px 22px;
+
+        border-radius: 15px;
+    }
+
+    .logo-contagem-text {
+        font-size: 24px;
+    }
+
+    .login-icon {
+        width: 68px;
+        height: 68px;
+
+        font-size: 34px;
+
+        border-radius: 14px;
+    }
+
+    .login-title {
+        font-size: 23px;
+    }
+
+    .login-description {
+        font-size: 13px;
+    }
+
+    .form-control {
+        height: 46px;
+    }
+
+    .btn-login {
+        height: 48px;
+    }
+}
+
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .login-card {
+        padding: 28px 18px;
+    }
+
+    .login-title {
+        font-size: 21px;
+    }
+
+    .logo-contagem-text {
+        font-size: 22px;
+    }
+}
+

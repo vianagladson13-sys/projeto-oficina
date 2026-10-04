@@ -1,0 +1,50 @@
+.tabela-produtos thead th {
+    background: #f8f9fa;
+    white-space: nowrap;
+    padding: 14px 12px;
+}
+
+.tabela-produtos td {
+    padding: 14px 12px;
+}
+
+.status-produto {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-ativo {
+    background: #e7f7ec;
+    color: #198754;
+}
+
+.status-inativo {
+    background: #fdeaea;
+    color: #dc3545;
+}
+
+.status-produto .bolinha {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.acoes-produto {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.acoes-produto .btn {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

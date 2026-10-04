@@ -1,0 +1,609 @@
+/* =========================================================
+   CLIENTE.CSS
+   MECANICA MF
+   ========================================================= */
+
+.mf-navbar {
+    width: 100%;
+
+    background: #061b49;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   CONTAINER DO NAVBAR
+   ========================================================= */
+
+.mf-navbar-container {
+    width: 100%;
+
+    max-width: 1180px;
+
+    min-height: 82px;
+
+    margin: 0 auto;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.mf-navbar-brand {
+    color: #ffffff;
+
+    font-size: 1.8rem;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    letter-spacing: 0.3px;
+}
+
+.mf-navbar-brand:hover {
+    color: #93c5fd;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.mf-navbar-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+}
+
+.mf-navbar-menu a {
+    position: relative;
+
+    color: #cbd5e1;
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    padding: 30px 0;
+}
+
+
+/* =========================================================
+   EFEITO DO MENU
+   ========================================================= */
+
+.mf-navbar-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 22px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #0d6efd;
+
+    transition: width 0.25s ease;
+}
+
+.mf-navbar-menu a:hover {
+    color: #ffffff;
+}
+
+.mf-navbar-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ITEM ATIVO
+   ========================================================= */
+
+.mf-navbar-menu a.active {
+    color: #ffffff;
+}
+
+.mf-navbar-menu a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ESPAÇO ENTRE NAVBAR E CADASTRO
+   ========================================================= */
+
+.cliente-page {
+    width: 100%;
+
+    min-height: calc(100vh - 82px);
+
+    padding: 55px 20px;
+
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .mf-navbar-container {
+        min-height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .mf-navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .mf-navbar-menu {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .mf-navbar-menu a {
+        padding: 5px 0;
+
+        font-size: 0.85rem;
+    }
+
+    .mf-navbar-menu a::after {
+        bottom: 0;
+    }
+
+    .cliente-page {
+        min-height: calc(100vh - 130px);
+
+        padding: 35px 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .mf-navbar-menu {
+        gap: 14px;
+    }
+
+    .mf-navbar-menu a {
+        font-size: 0.78rem;
+    }
+
+    .cliente-page {
+        padding: 25px 10px;
+    }
+}
+:root {
+
+    --azul-escuro: #071a33;
+    --azul: #0b5ed7;
+    --azul-hover: #084298;
+    --azul-claro: #eaf3ff;
+
+    --cinza-borda: #d7dee7;
+    --cinza-texto: #667085;
+
+    --branco: #ffffff;
+    --preto: #17202a;
+}
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.cliente-page {
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2f6,
+            #f8fafc
+        );
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+#container-cliente {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    background: #ffffff;
+
+    border: 1px solid #d7dee7;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cliente-header {
+
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a33,
+            #0b315c
+        );
+
+    color: #ffffff;
+}
+
+
+.cliente-icon {
+
+    width: 56px;
+
+    height: 56px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.12);
+
+    color: #5fa8ff;
+
+    font-size: 25px;
+}
+
+
+.cliente-header h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.cliente-header p {
+
+    margin: 5px 0 0;
+
+    color: rgba(255,255,255,0.70);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CORPO
+   ========================================================= */
+
+.cliente-body {
+
+    padding: 30px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.cliente-body .form-label {
+
+    margin-bottom: 7px;
+
+    color: #344054;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+   ========================================================= */
+
+.cliente-body .input-group {
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    transition: 0.2s ease;
+}
+
+
+.cliente-body .input-group-text {
+
+    width: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f7fa;
+
+    color: var(--azul);
+
+    border: 1px solid var(--cinza-borda);
+
+    border-right: 0;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.cliente-body .form-control {
+
+    height: 48px;
+
+    border: 1px solid var(--cinza-borda);
+
+    color: var(--preto);
+
+    background: #ffffff;
+
+    box-shadow: none !important;
+
+    font-size: 14px;
+}
+
+
+.cliente-body .form-control::placeholder {
+
+    color: #98a2b3;
+}
+
+
+.cliente-body .form-control:focus {
+
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 3px rgba(11,94,215,0.10) !important;
+}
+
+
+.cliente-body .input-group:focus-within {
+
+    box-shadow:
+        0 0 0 3px rgba(11,94,215,0.08);
+}
+
+
+.cliente-body .input-group:focus-within
+.input-group-text {
+
+    border-color: var(--azul);
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.cliente-botoes {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.cliente-botoes button {
+
+    height: 50px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+
+/* =========================================================
+   CADASTRAR
+   ========================================================= */
+
+.cliente-botoes .btn-cadastrar {
+
+    flex: 1;
+
+    border: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b5ed7,
+            #084298
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 17px rgba(11,94,215,0.22);
+}
+
+
+.cliente-botoes .btn-cadastrar:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #084298,
+            #062d68
+        );
+
+    transform: translateY(-2px);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 22px rgba(11,94,215,0.28);
+}
+
+
+/* =========================================================
+   LIMPAR
+   ========================================================= */
+
+.cliente-botoes .btn-limpar {
+
+    flex: 1;
+
+    border: 1px solid #b9d5f7;
+
+    background: #eaf3ff;
+
+    color: #0b5ed7;
+}
+
+
+.cliente-botoes .btn-limpar:hover {
+
+    background: #0b5ed7;
+
+    border-color: #0b5ed7;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(11,94,215,0.20);
+}
+
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+#mensagem {
+
+    border-radius: 9px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .cliente-page {
+
+        padding: 20px 12px;
+    }
+
+    .cliente-header {
+
+        padding: 20px;
+    }
+
+    .cliente-body {
+
+        padding: 22px 20px;
+    }
+
+    .cliente-header h2 {
+
+        font-size: 18px;
+    }
+
+    .cliente-botoes {
+
+        flex-direction: column;
+    }
+
+}

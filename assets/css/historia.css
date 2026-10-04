@@ -1,0 +1,532 @@
+/* =========================================================
+   MECANICA MF - CSS PADRÃO
+   Tema: Azul / Branco / Cinza
+   Navbar removido
+   Laranja removido completamente
+   ========================================================= */
+
+:root {
+    --mf-azul-escuro: #061b49;
+    --mf-azul-principal: #0759b8;
+    --mf-azul-claro: #0d6efd;
+    --mf-branco: #ffffff;
+    --mf-fundo: #f4f7fb;
+    --mf-texto: #475569;
+    --mf-texto-escuro: #1e293b;
+    --mf-borda: #dbe3ef;
+    --mf-cinza: #64748b;
+    --mf-sucesso: #198754;
+    --mf-sucesso-hover: #157347;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--mf-texto);
+    background: linear-gradient(
+        135deg,
+        #f4f7fb 0%,
+        #ffffff 50%,
+        #eef5ff 100%
+    );
+    line-height: 1.6;
+}
+
+/* Remove qualquer navbar caso ainda exista no HTML */
+.navbar,
+.navbar-contagem,
+.navbar-contagem360,
+.navbar-mf {
+    display: none !important;
+}
+
+/* LINKS */
+a {
+    color: var(--mf-azul-principal);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--mf-azul-escuro);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-historia {
+    position: relative;
+    overflow: hidden;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        var(--mf-azul-escuro),
+        var(--mf-azul-principal)
+    );
+    color: var(--mf-branco);
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero-historia::before,
+.hero-historia::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.hero-historia::before {
+    width: 320px;
+    height: 320px;
+    top: -160px;
+    right: -80px;
+}
+
+.hero-historia::after {
+    width: 220px;
+    height: 220px;
+    bottom: -130px;
+    left: -60px;
+}
+
+.hero-historia .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero-historia h1 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+}
+
+.hero-historia p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.05rem;
+}
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.historia-section,
+.proposito-section,
+.acessibilidade-section {
+    padding: 75px 0;
+}
+
+.historia-section {
+    background: #ffffff;
+}
+
+.proposito-section {
+    background: var(--mf-fundo);
+}
+
+.acessibilidade-section {
+    background: #ffffff;
+}
+
+.section-title {
+    margin-bottom: 12px;
+    color: var(--mf-azul-escuro);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    color: var(--mf-texto);
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.historia-card,
+.proposito-card {
+    height: 100%;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid var(--mf-borda);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(6, 27, 73, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historia-card:hover,
+.proposito-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(6, 27, 73, 0.12);
+}
+
+.historia-card h3,
+.proposito-card h3 {
+    color: var(--mf-azul-escuro);
+    font-weight: 700;
+}
+
+.historia-card p,
+.proposito-card p {
+    color: var(--mf-texto);
+}
+
+/* ÍCONES */
+.icone-historia,
+.icone-card {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #eaf2ff;
+    color: var(--mf-azul-principal);
+    font-size: 1.6rem;
+}
+
+.icone-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   PROPÓSITO
+   ========================================================= */
+
+.proposito-card {
+    text-align: center;
+}
+
+.proposito-card h3 {
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+.acessibilidade-box {
+    padding: 35px;
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #eef5ff
+    );
+    border: 1px solid var(--mf-borda);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(6, 27, 73, 0.06);
+}
+
+.item-acessibilidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--mf-borda);
+}
+
+.item-acessibilidade:last-child {
+    border-bottom: none;
+}
+
+.item-acessibilidade i {
+    flex-shrink: 0;
+    color: var(--mf-azul-principal);
+    font-size: 1.4rem;
+}
+
+.item-acessibilidade h4 {
+    margin-bottom: 5px;
+    color: var(--mf-azul-escuro);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.item-acessibilidade p {
+    margin: 0;
+    color: var(--mf-texto);
+}
+
+/* =========================================================
+   FRASE FINAL
+   ========================================================= */
+
+.frase-section {
+    padding: 80px 20px;
+    background: linear-gradient(
+        135deg,
+        var(--mf-azul-escuro),
+        var(--mf-azul-principal)
+    );
+    text-align: center;
+}
+
+.frase-conteudo {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.frase-conteudo h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 800;
+}
+
+.frase-conteudo p {
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        var(--mf-azul-principal),
+        var(--mf-azul-claro)
+    );
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(7, 89, 184, 0.22);
+    transition: 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        var(--mf-azul-escuro),
+        var(--mf-azul-principal)
+    );
+    box-shadow: 0 10px 24px rgba(6, 27, 73, 0.25);
+}
+
+.btn-suporte-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: var(--mf-sucesso);
+    color: #ffffff !important;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(25, 135, 84, 0.20);
+    transition: 0.3s ease;
+}
+
+.btn-suporte-whatsapp:hover {
+    background: var(--mf-sucesso-hover);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--mf-azul-escuro);
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer h4,
+footer h5,
+footer h6 {
+    color: #ffffff;
+}
+
+footer p,
+footer span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer .bi {
+    color: #ffffff;
+}
+
+/* =========================================================
+   FORMULÁRIOS
+   ========================================================= */
+
+.form-label {
+    color: var(--mf-azul-escuro);
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    min-height: 46px;
+    border: 1px solid var(--mf-borda);
+    border-radius: 10px;
+    color: var(--mf-texto-escuro);
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--mf-azul-principal);
+    box-shadow: 0 0 0 0.2rem rgba(7, 89, 184, 0.12);
+}
+
+/* =========================================================
+   TABELAS
+   ========================================================= */
+
+.table {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: var(--mf-azul-escuro);
+    color: #ffffff;
+}
+
+.table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f1f6fd;
+}
+
+/* =========================================================
+   ALERTAS
+   ========================================================= */
+
+.alert {
+    border-radius: 12px;
+    border: 1px solid var(--mf-borda);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 991px) {
+    .hero-historia {
+        min-height: 290px;
+        padding: 60px 20px;
+    }
+
+    .historia-section,
+    .proposito-section,
+    .acessibilidade-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-historia h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-historia p {
+        font-size: 0.98rem;
+    }
+
+    .historia-section,
+    .proposito-section,
+    .acessibilidade-section {
+        padding: 50px 0;
+    }
+
+    .historia-card,
+    .proposito-card {
+        padding: 24px;
+    }
+
+    .acessibilidade-box {
+        padding: 25px;
+    }
+
+    .frase-section {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-historia {
+        min-height: 260px;
+        padding: 50px 15px;
+    }
+
+    .hero-historia h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.65rem;
+    }
+
+    .historia-section,
+    .proposito-section,
+    .acessibilidade-section {
+        padding: 40px 0;
+    }
+
+    .item-acessibilidade {
+        gap: 10px;
+    }
+
+    .btn-principal,
+    .btn-suporte-whatsapp {
+        width: 100%;
+    }
+}
