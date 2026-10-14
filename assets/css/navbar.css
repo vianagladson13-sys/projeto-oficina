@@ -1,0 +1,82 @@
+
+/* =====================================================
+   NAVBAR - MECANICA MF
+   ===================================================== */
+
+.mf-navbar {
+    width: 100%;
+    background-color: #061b49;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 1000;
+}
+
+/* CONTAINER */
+
+.mf-navbar-container {
+    min-height: 78px;
+}
+
+/* NOME DA EMPRESA */
+
+.mf-navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.mf-navbar-brand .nome-site {
+    font-size: 1.25rem;
+}
+
+.mf-navbar-brand small {
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+/* LINKS */
+
+.mf-navbar .navbar-nav {
+    gap: 8px;
+}
+
+.mf-navbar .nav-link {
+    color: #e2e8f0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.mf-navbar .nav-link:hover,
+.mf-navbar .nav-link:focus {
+    color: #ffffff;
+    background-color: #0b5ed7;
+}
+
+/* BOTÃO DO MENU MOBILE */
+
+.mf-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mf-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
+}
+
+/* TELAS PEQUENAS */
+
+@media (max-width: 991.98px) {
+    .mf-navbar .navbar-collapse {
+        padding: 12px 0 18px;
+    }
+
+    .mf-navbar .navbar-nav {
+        gap: 4px;
+    }
+
+    .mf-navbar .nav-link {
+        padding: 12px;
+    }
+}

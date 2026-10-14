@@ -4,50 +4,6 @@
 
 <link rel="stylesheet" href="assets/css/cliente.css">
 
-
-<!-- =========================================================
-     NAVBAR - MECANICA MF
-     ========================================================= -->
-
-<header class="mf-navbar">
-
-    <div class="mf-navbar-container">
-
-        <!-- LOGO -->
-        <a href="index.php?page=landing" class="mf-navbar-brand">
-            Mecanica MF
-        </a>
-
-
-        <!-- MENU -->
-        <nav class="mf-navbar-menu">
-
-            <a href="index.php?page=landing">
-                Serviços
-            </a>
-
-            <a href="index.php?page=cliente.php">
-                Clientes
-            </a>
-
-            <a href="manutencao.php">
-                Manutenção
-            </a>
-
-            <a href="#">
-                Sobre nós
-            </a>
-
-            <a href="index.php?page=login">
-                Sair
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
 <!-- =========================================================
      CADASTRO DE CLIENTE
      ========================================================= -->

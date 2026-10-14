@@ -13,102 +13,80 @@
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
 </head>
+
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
     <?php
-    // Captura a página atual informada na URL
+    // Captura a página solicitada pela URL
     $page = $_GET["page"] ?? "landing";
 
-    // Páginas que possuem HTML próprio
+    // Páginas carregadas diretamente pela estrutura views
     $paginasPublicas = [
         "landing" => __DIR__ . "/views/landing.php",
-        "login" => __DIR__ . "/views/login.php",
+        "login"   => __DIR__ . "/views/login.php",
         "cliente" => __DIR__ . "/views/cliente.php",
+        "historia" => __DIR__ . "/views/historia.php",
+    
     ];
-
-    // Verifica se é uma página independente
-    if (array_key_exists($page, $paginasPublicas)) {
-        require $paginasPublicas[$page];
-        exit;
-    }
-
     ?>
 
-    <!-- Cabeçalho -->
-    <header class="bg-dark text-white py-3">
-        <div class="container">
+    <!-- =========================================
+         NAVBAR PADRÃO - MECANICA MF
+         ========================================= -->
 
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <?php if ($page !== "login" && $page !== "landing"): ?>
 
-                <h1 class="h3 mb-3 mb-md-0">
-                    <a href="index.php?page=home" class="text-white text-decoration-none">
-                        Mecanica MF
-                    </a>
-                </h1>
+        <?php
+        // Inclui o navbar em todas as páginas,
+        // exceto na tela de login.
+        require __DIR__ . "/includes/navbar.php";
+        ?>
 
-                <!-- Menu principal -->
-                <nav class="nav">
-
-                    <a href="index.php?page=produtos"
-                        class="nav-link <?= $page === 'produtos' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Serviços
-                    </a>
-
-                    <a href="index.php?page=cliente"
-                        class="nav-link <?= $page === 'cliente' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Clientes
-                    </a>
-
-                    <a href="index.php?page=aconpanhamento"
-                        class="nav-link <?= $page === 'aconpanhamento' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Aconpanhamento
-                    </a>
-
-                    <a href="index.php?page=manutencao"
-                        class="nav-link <?= $page === 'manutencao' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Manutenção
-                    </a>
-
-                    <a href="index.php?page=historia"
-                        class="nav-link <?= $page === 'historia' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Sobre nós
-                    </a>
+    <?php endif; ?>
 
 
-                    <a href="index.php?page=landing"
-                        class="nav-link <?= $page === 'landing' ? 'text-white fw-bold' : 'text-white-50' ?>">
-                        Sair
-                    </a>
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+         ========================================= -->
 
-                </nav>
-
-            </div>
-
-        </div>
-    </header>
-
-    <!-- Conteúdo carregado pelas rotas -->
     <main class="flex-grow-1">
 
         <?php
-        // Carrega o arquivo que controla as páginas do sistema
-        require __DIR__ . "/routes.php";
+        // Se a página estiver na lista, carrega sua view.
+        if (array_key_exists($page, $paginasPublicas)) {
+
+            require $paginasPublicas[$page];
+
+        } else {
+
+            // Demais páginas continuam sendo controladas
+            // pelo arquivo routes.php.
+            require __DIR__ . "/routes.php";
+
+        }
         ?>
 
     </main>
 
-    <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
 
-        <p class="mb-0">
-            Cadastros De Veiculos e Serviços
-        </p>
+    <!-- =========================================
+         RODAPÉ
+         ========================================= -->
+
+    <footer class="bg-dark text-white text-center py-3 mt-0">
 
     </footer>
 
-    <!-- JavaScript do Bootstrap -->
+
+    <!-- =========================================
+         JAVASCRIPT DO BOOTSTRAP
+         ========================================= -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Constantes do sistema -->
@@ -118,5 +96,6 @@
     <script src="js/helpers.js"></script>
 
 </body>
+
 
 </html>
