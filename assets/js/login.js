@@ -1,117 +1,101 @@
+
 // LOGIN USANDO JQUERY
 
 $(document).ready(function () {
-  
-  //Não se aplica nesta página
-  //aplicarMascaras();
 
-  // Configura a validação do formulário
-  validarFormulario();
+    validarFormulario();
 
 });
 
 
 function validarFormulario() {
 
-  // Seleciona a div responsável pelas mensagens
-  const mensagem = document.getElementById("mensagem");
+    const mensagem = document.getElementById("mensagem");
 
+    $("#formLogin").validate({
 
-  // Configura o jQuery Validation
-  $("#formLogin").validate({
+        // Regras de validação
+        rules: {
 
-    // Regras de validação
-    rules: {
+            email: {
+                required: true,
+                email: true
+            },
 
-      email: {
-        required: true,
-        email: true,
-      },
+            senha: {
+                required: true,
+                minlength: 6
+            }
 
-      senha: {
-        required: true,
-        minlength: 6,
-      },
+        },
 
-    },
+        // Mensagens em português
+        messages: {
 
+            email: {
+                required: "Informe o e-mail.",
+                email: "Informe um e-mail válido."
+            },
 
-    // Mensagens em português
-    messages: {
+            senha: {
+                required: "Informe a senha.",
+                minlength: "A senha deve possuir no mínimo 6 caracteres."
+            }
 
-      email: {
-        required: "Informe o e-mail.",
-        email: "Informe um e-mail válido.",
-      },
+        },
 
-      senha: {
-        required: "Informe a senha.",
-        minlength: "A senha deve possuir no mínimo 6 caracteres.",
-      },
+        // Exibe a mensagem abaixo do campo
+        errorElement: "div",
 
-    },
+        errorPlacement: function (error, element) {
 
+            error.addClass("invalid-feedback");
 
-    // Mensagens de erro
-    errorPlacement: function (error, element) {
+            error.insertAfter(element);
 
-      element
-        .closest(".mb-3")
-        .find(".invalid-feedback")
-        .text(error.text());
+        },
 
-    },
+        // Campo inválido
+        highlight: function (element) {
 
+            $(element)
+                .removeClass("is-valid")
+                .addClass("is-invalid");
 
-    // Campo inválido
-    highlight: function (element) {
+        },
 
-      $(element)
-        .removeClass("is-valid")
-        .addClass("is-invalid");
+        // Campo válido
+        unhighlight: function (element) {
 
-    },
+            $(element)
+                .removeClass("is-invalid")
+                .addClass("is-valid");
 
+        },
 
-    // Campo válido
-    unhighlight: function (element) {
+        // Executado quando o formulário estiver válido
+        submitHandler: async function (formulario) {
 
-      $(element)
-        .removeClass("is-invalid")
-        .addClass("is-valid");
+            const dados = new FormData(formulario);
 
-    },
+            console.table(
+                Object.fromEntries(dados.entries())
+            );
 
+            if (mensagem) {
+                mensagem.className = "alert alert-info mt-3";
+                mensagem.textContent = "Verificando dados...";
+            }
 
-    // Executado quando o formulário estiver válido
-    submitHandler: async function (formulario) {
+            /*
+             * Próxima etapa:
+             * Enviar os dados para controllers/LoginController.php
+             */
 
-      // Captura os dados
-      const dados = new FormData(formulario);
+            return false;
 
+        }
 
-      // Mostra os dados no console
-      console.table(
-        Object.fromEntries(dados.entries())
-      );
-
-
-      // Exibe mensagem
-      mensagem.className = "alert alert-info mt-3";
-      mensagem.textContent = "Verificando dados...";
-
-
-      /*
-       * Próxima etapa:
-       *
-       * Enviar os dados para:
-       *
-       * controllers/LoginController.php
-       *
-       */
-
-    },
-
-  });
+    });
 
 }
