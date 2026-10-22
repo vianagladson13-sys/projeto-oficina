@@ -25,10 +25,10 @@
 
             <div>
 
-                <h2>Cadastro de clientes</h2>
+                <h2>Cadastre Seu Veiculo</h2>
 
                 <p>
-                    Cadastre os dados do cliente e do veículo.
+                    Preencha As Informações Abaixo Para Agikizar Nossos Atendimentos.
                 </p>
 
             </div>
