@@ -24,42 +24,44 @@
 <body class="bg-light">
 
 
-    <!-- =========================================
-         CABEÇALHO DA LANDING PAGE
-    ========================================== -->
+  
+<!-- CABEÇALHO DA LANDING PAGE -->
 
-    <header>
+<header class="mf-header">
 
-        <nav class="navbar navbar-dark bg-dark py-3">
+    <nav class="mf-navbar-landing">
 
-            <div class="container">
+        <div class="container mf-header-container">
 
-                <!-- Logo / Nome -->
-                <a href="index.php?page=landing"
-                    class="navbar-brand fw-bold">
+            <!-- LOGO E NOME -->
+            <a href="index.php?page=landing"
+               class="mf-header-brand">
 
-                    <i class="bi bi-grid me-2"></i>
+                <span class="mf-header-logo">
+                    <i class="bi bi-gear-wide-connected"></i>
+                </span>
 
-                   Mecanica MF
+                <span class="mf-header-brand-text">
+                    <strong>MECÂNICA <span>MF</span></strong>
+                    <small>TECNOLOGIA AUTOMOTIVA</small>
+                </span>
 
-                </a>
+            </a>
 
+            <!-- BOTÃO ENTRAR -->
+            <a href="index.php?page=login"
+               class="mf-header-login">
 
-                <!-- Login -->
-                <a href="index.php?page=login"
-                    class="btn btn-outline-light">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>ENTRAR</span>
 
-                    <i class="bi bi-box-arrow-in-right me-1"></i>
+            </a>
 
-                    Entrar
+        </div>
 
-                </a>
+    </nav>
 
-            </div>
-
-        </nav>
-
-    </header>
+</header>
 
 
     <!-- =========================================
