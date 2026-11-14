@@ -1,0 +1,69 @@
+
+/* =========================================================
+   RODAPÉ - MECANICA MF
+   ========================================================= */
+
+.mf-footer {
+    width: 100%;
+    background: #080808;
+    border-top: 3px solid #dc2626;
+    padding: 30px 15px 18px;
+    margin-top: 0;
+}
+
+/* CONTAINER */
+
+.mf-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* FRASE PRINCIPAL */
+
+.mf-footer-frase {
+    color: #e5e5e5;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto 20px;
+
+    white-space: nowrap;
+}
+
+/* DIREITOS AUTORAIS */
+
+.mf-footer-copy {
+    color: #999999;
+    font-size: 13px;
+
+    margin: 0;
+    padding-top: 15px;
+
+    border-top: 1px solid #292929;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .mf-footer {
+        padding: 25px 15px 18px;
+    }
+
+    .mf-footer-frase {
+        white-space: normal;
+        font-size: 14px;
+    }
+
+    .mf-footer-copy {
+        font-size: 12px;
+    }
+
+}

@@ -1,1062 +1,781 @@
+
 /* =========================================================
-
-   MECANICA MF - CSS PADRÃO
-
-   Tema: Preto / Vermelho / Branco / Cinza
-
-   Navbar removido
-
-   Laranja removido completamente
-
-   ========================================================= */
-
-
+   MECÂNICA MF - NOSSA HISTÓRIA
+   IDENTIDADE VISUAL PRETO E VERMELHO
+========================================================= */
 
 :root {
-
---mf-vermelho-escuro: #171717;
-
---mf-vermelho-principal: #d90000;
-
---mf-vermelho-claro: #a80000;
-
---mf-branco: #ffffff;
-
---mf-fundo: #f7f7f7;
-
---mf-texto: #475569;
-
---mf-texto-escuro: #1e293b;
-
---mf-borda: #dbe3ef;
-
---mf-cinza: #64748b;
-
---mf-sucesso: #198754;
-
---mf-sucesso-hover: #157347;
-
+    --mf-vermelho: #ff252d;
+    --mf-vermelho-hover: #d90008;
+    --mf-preto: #050505;
+    --mf-card: #101010;
+    --mf-card-hover: #171717;
+    --mf-branco: #ffffff;
+    --mf-cinza: #bdbdbd;
+    --mf-borda: #303030;
 }
-
-
-
-/* RESET */
-
-* {
-
-box-sizing: border-box;
-
-}
-
-
-
-html {
-
-scroll-behavior: smooth;
-
-}
-
-
-
-body {
-
-margin: 0;
-
-padding: 0;
-
-font-family: "Segoe UI", Arial, sans-serif;
-
-color: var(--mf-texto);
-
-background: linear-gradient(
-
-    135deg,
-
-#f7f7f7 0%,
-
-#ffffff 50%,
-
-#fff0f0 100%
-
-);
-
-line-height: 1.6;
-
-}
-
-
-
-/* Remove qualquer navbar caso ainda exista no HTML */
-
-.navbar,
-
-.navbar-contagem,
-
-.navbar-contagem360,
-
-.navbar-mf {
-
-display: none !important;
-
-}
-
-
-
-/* LINKS */
-
-a {
-
-color: var(--mf-vermelho-principal);
-
-text-decoration: none;
-
-transition: 0.3s ease;
-
-}
-
-
-
-a:hover {
-
-color: var(--mf-vermelho-escuro);
-
-}
-
-
 
 /* =========================================================
-
-   HERO
-
-   ========================================================= */
-
-
-
-.hero-historia {
-
-position: relative;
-
-overflow: hidden;
-
-min-height: 330px;
-
-display: flex;
-
-align-items: center;
-
-background: linear-gradient(
-
-135deg,
-
-var(--mf-vermelho-escuro),
-
-var(--mf-vermelho-principal)
-
-);
-
-color: var(--mf-branco);
-
-text-align: center;
-
-padding: 70px 20px;
-
-}
-
-
-
-.hero-historia::before,
-
-.hero-historia::after {
-
-content: "";
-
-position: absolute;
-
-border-radius: 50%;
-
-background: rgba(255, 255, 255, 0.06);
-
-pointer-events: none;
-
-}
-
-
-
-.hero-historia::before {
-
-width: 320px;
-
-height: 320px;
-
-top: -160px;
-
-right: -80px;
-
-}
-
-
-
-.hero-historia::after {
-
-width: 220px;
-
-height: 220px;
-
-bottom: -130px;
-
-left: -60px;
-
-}
-
-
-
-.hero-historia .container {
-
-position: relative;
-
-z-index: 2;
-
-}
-
-
-
-.hero-tag {
-
-display: inline-block;
-
-padding: 7px 16px;
-
-margin-bottom: 15px;
-
-border: 1px solid rgba(255, 255, 255, 0.3);
-
-border-radius: 50px;
-
-background: rgba(255, 255, 255, 0.08);
-
-color: #ffffff;
-
-font-size: 0.85rem;
-
-font-weight: 600;
-
-letter-spacing: 0.5px;
-
-}
-
-
-
-.hero-historia h1 {
-
-margin-bottom: 15px;
-
-color: #ffffff;
-
-font-size: clamp(2.2rem, 5vw, 3.6rem);
-
-font-weight: 800;
-
-}
-
-
-
-.hero-historia p {
-
-max-width: 750px;
-
-margin: 0 auto;
-
-color: rgba(255, 255, 255, 0.88);
-
-font-size: 1.05rem;
-
-}
-
-
-
-/* =========================================================
-
-   SEÇÕES
-
-   ========================================================= */
-
-
+   RESET / BASE
+========================================================= */
 
 .historia-section,
-
 .proposito-section,
-
-.acessibilidade-section {
-
-padding: 75px 0;
-
+.acessibilidade-section,
+.frase-section,
+.hero-historia {
+    box-sizing: border-box;
 }
 
+.historia-section *,
+.proposito-section *,
+.acessibilidade-section *,
+.frase-section *,
+.hero-historia * {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    background: #050505;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar-contagem {
+    background: #080808;
+    border-bottom: 1px solid #292929;
+    padding: 18px 0;
+}
+
+.navbar-contagem .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-contagem .nome-site {
+    display: block;
+    color: #ff252d;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.navbar-contagem .navbar-brand small {
+    color: #a3a3a3;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar-contagem .nav-link {
+    margin: 0 5px;
+    padding: 10px 12px !important;
+
+    color: #bdbdbd;
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.navbar-contagem .nav-link:hover,
+.navbar-contagem .nav-link.active {
+    color: #ff252d;
+}
+
+.navbar-contagem .btn-login {
+    padding: 10px 25px;
+
+    background: #ff252d;
+    border: 1px solid #ff252d;
+    border-radius: 6px;
+
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.navbar-contagem .btn-login:hover {
+    background: #d90008;
+    border-color: #d90008;
+    transform: translateY(-2px);
+}
+
+.navbar-contagem .navbar-toggler {
+    border-color: #444444;
+}
+
+.navbar-contagem .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(255, 37, 45, 0.20);
+}
+
+/* =========================================================
+   HERO - NOSSA HISTÓRIA
+========================================================= */
+
+.hero-historia {
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 0 110px;
+
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(255, 0, 0, 0.15),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #050505,
+            #100000,
+            #210000
+        );
+
+    border-bottom: 1px solid #2b1111;
+}
+
+.hero-historia::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: linear-gradient(
+        180deg,
+        transparent,
+        #ff252d,
+        transparent
+    );
+}
+
+.hero-conteudo {
+    max-width: 800px;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+    padding: 10px 16px;
+
+    background: #1a0808;
+    border: 1px solid #451414;
+    border-radius: 30px;
+
+    color: #ff4148;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.hero-tag i {
+    font-size: 17px;
+}
+
+.hero-historia h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 6vw, 65px);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+}
+
+.hero-historia p {
+    max-width: 650px;
+
+    margin: 20px 0 0;
+
+    color: #bdbdbd;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   SEÇÃO HISTÓRIA
+========================================================= */
 
 .historia-section {
+    padding: 100px 0;
 
-background: #ffffff;
-
+    background: #080808;
 }
 
+.section-label {
+    display: inline-block;
 
+    margin-bottom: 15px;
+
+    color: #ff252d;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.historia-section h2,
+.acessibilidade-section h2 {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.historia-section p,
+.acessibilidade-section p {
+    margin-bottom: 18px;
+
+    color: #bdbdbd;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.historia-section strong {
+    color: #ffffff;
+}
+
+/* =========================================================
+   CARD DE DESTAQUE
+========================================================= */
+
+.historia-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 0, 0, 0.12),
+            transparent 45%
+        ),
+        #101010;
+
+    border: 1px solid #303030;
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s ease;
+}
+
+.historia-card:hover {
+    border-color: #551515;
+    transform: translateY(-5px);
+}
+
+.icone-historia {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ff252d,
+        #c90008
+    );
+
+    border-radius: 12px;
+
+    color: #ffffff;
+    font-size: 30px;
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.20);
+}
+
+.historia-card h3 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.historia-card p {
+    color: #bdbdbd;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.historia-card .linha {
+    width: 60px;
+    height: 3px;
+
+    margin: 25px 0;
+
+    background: #ff252d;
+    border-radius: 10px;
+}
+
+.historia-card > span {
+    color: #ff252d;
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   NOSSO FOCO
+========================================================= */
 
 .proposito-section {
+    padding: 100px 0;
 
-background: var(--mf-fundo);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 0, 0, 0.07),
+            transparent 40%
+        ),
+        #0d0d0d;
 
+    border-top: 1px solid #252525;
+    border-bottom: 1px solid #252525;
 }
 
-
-
-.acessibilidade-section {
-
-background: #ffffff;
-
+.titulo-proposito {
+    max-width: 850px;
+    margin: 0 auto;
 }
 
+.titulo-proposito h2 {
+    margin: 0 0 20px;
 
+    color: #ffffff;
 
-.section-title {
-
-margin-bottom: 12px;
-
-color: var(--mf-vermelho-escuro);
-
-font-size: 2rem;
-
-font-weight: 800;
-
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 1.3;
 }
 
+.titulo-proposito p {
+    color: #a3a3a3;
 
-
-.section-subtitle {
-
-max-width: 720px;
-
-margin: 0 auto 45px;
-
-color: var(--mf-texto);
-
+    font-size: 15px;
+    line-height: 1.8;
 }
-
-
 
 /* =========================================================
-
-   CARDS
-
-   ========================================================= */
-
-
-
-.historia-card,
+   CARDS DO PROPÓSITO
+========================================================= */
 
 .proposito-card {
+    height: 100%;
 
-height: 100%;
+    padding: 35px 30px;
 
-padding: 30px;
+    background: #101010;
 
-background: #ffffff;
+    border: 1px solid #303030;
+    border-radius: 12px;
 
-border: 1px solid var(--mf-borda);
-
-border-radius: 18px;
-
-box-shadow: 0 8px 25px rgba(23, 23, 23, 0.07);
-
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+    transition: 0.3s ease;
 }
-
-
-
-.historia-card:hover,
 
 .proposito-card:hover {
+    background: #151515;
 
-transform: translateY(-5px);
+    border-color: #551515;
 
-box-shadow: 0 14px 35px rgba(23, 23, 23, 0.12);
+    transform: translateY(-6px);
 
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
+.icone-card {
+    width: 55px;
+    height: 55px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.historia-card h3,
+    margin-bottom: 25px;
+
+    background: #1a0808;
+
+    border: 1px solid #451414;
+    border-radius: 10px;
+
+    color: #ff252d;
+    font-size: 25px;
+
+    transition: 0.3s ease;
+}
+
+.proposito-card:hover .icone-card {
+    background: #ff252d;
+    color: #ffffff;
+}
 
 .proposito-card h3 {
+    margin-bottom: 15px;
 
-color: var(--mf-vermelho-escuro);
+    color: #ffffff;
 
-font-weight: 700;
-
+    font-size: 20px;
+    font-weight: 800;
 }
-
-
-
-.historia-card p,
 
 .proposito-card p {
+    margin: 0;
 
-color: var(--mf-texto);
+    color: #a3a3a3;
 
+    font-size: 14px;
+    line-height: 1.8;
 }
-
-
-
-/* ÍCONES */
-
-.icone-historia,
-
-.icone-card {
-
-width: 58px;
-
-height: 58px;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-margin-bottom: 20px;
-
-border-radius: 15px;
-
-background: #ffe5e5;
-
-color: var(--mf-vermelho-principal);
-
-font-size: 1.6rem;
-
-}
-
-
-
-.icone-card {
-
-margin-left: auto;
-
-margin-right: auto;
-
-}
-
-
 
 /* =========================================================
+   ATENDIMENTO
+========================================================= */
 
-   PROPÓSITO
+.acessibilidade-section {
+    padding: 100px 0;
 
-   ========================================================= */
-
-
-
-.proposito-card {
-
-text-align: center;
-
+    background: #080808;
 }
-
-
-
-.proposito-card h3 {
-
-margin-bottom: 12px;
-
-}
-
-
 
 /* =========================================================
-
-   ACESSIBILIDADE
-
-   ========================================================= */
-
-
+   BOX DE ATENDIMENTO
+========================================================= */
 
 .acessibilidade-box {
+    padding: 30px;
 
-padding: 35px;
+    background: #101010;
 
-background: linear-gradient(
-
-135deg,
-
-#fff8f8,
-
-#fff0f0
-
-);
-
-border: 1px solid var(--mf-borda);
-
-border-radius: 20px;
-
-box-shadow: 0 8px 25px rgba(23, 23, 23, 0.06);
-
+    border: 1px solid #303030;
+    border-radius: 12px;
 }
-
-
 
 .item-acessibilidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
 
-display: flex;
+    padding: 22px 0;
 
-align-items: flex-start;
-
-gap: 15px;
-
-padding: 18px 0;
-
-border-bottom: 1px solid var(--mf-borda);
-
+    border-bottom: 1px solid #292929;
 }
 
-
+.item-acessibilidade:first-child {
+    padding-top: 0;
+}
 
 .item-acessibilidade:last-child {
-
-border-bottom: none;
-
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
+.item-acessibilidade > i {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.item-acessibilidade i {
+    background: #1a0808;
 
-flex-shrink: 0;
+    border: 1px solid #451414;
+    border-radius: 9px;
 
-color: var(--mf-vermelho-principal);
-
-font-size: 1.4rem;
-
+    color: #ff252d;
+    font-size: 21px;
 }
-
-
 
 .item-acessibilidade h4 {
+    margin: 0 0 8px;
 
-margin-bottom: 5px;
+    color: #ffffff;
 
-color: var(--mf-vermelho-escuro);
-
-font-size: 1.05rem;
-
-font-weight: 700;
-
+    font-size: 16px;
+    font-weight: 800;
 }
-
-
 
 .item-acessibilidade p {
+    margin: 0;
 
-margin: 0;
+    color: #a3a3a3;
 
-color: var(--mf-texto);
-
+    font-size: 13px;
+    line-height: 1.8;
 }
 
-
-
 /* =========================================================
-
-   FRASE FINAL
-
-   ========================================================= */
-
-
+   FRASE FINAL
+========================================================= */
 
 .frase-section {
+    position: relative;
+    overflow: hidden;
 
-padding: 80px 20px;
+    padding: 100px 0;
 
-background: linear-gradient(
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 0, 0, 0.16),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #120000,
+            #050505,
+            #1a0000
+        );
 
-135deg,
-
-var(--mf-vermelho-escuro),
-
-var(--mf-vermelho-principal)
-
-);
-
-text-align: center;
-
+    border-top: 1px solid #351010;
 }
-
-
 
 .frase-conteudo {
+    max-width: 850px;
 
-max-width: 850px;
+    margin: 0 auto;
 
-margin: 0 auto;
-
+    text-align: center;
 }
 
+.frase-conteudo > i {
+    display: block;
 
+    margin-bottom: 20px;
+
+    color: #ff252d;
+    font-size: 55px;
+}
 
 .frase-conteudo h2 {
+    margin-bottom: 20px;
 
-margin-bottom: 15px;
+    color: #ffffff;
 
-color: #ffffff;
-
-font-size: clamp(1.8rem, 4vw, 2.7rem);
-
-font-weight: 800;
-
+    font-size: 42px;
+    font-weight: 900;
 }
-
-
 
 .frase-conteudo p {
+    margin-bottom: 35px;
 
-margin-bottom: 28px;
+    color: #bdbdbd;
 
-color: rgba(255, 255, 255, 0.85);
-
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-
-
 /* =========================================================
-
-   BOTÕES
-
-   ========================================================= */
-
-
+   BOTÃO PRINCIPAL / WHATSAPP
+========================================================= */
 
 .btn-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-display: inline-flex;
+    padding: 15px 30px;
 
-align-items: center;
+    background: linear-gradient(
+        135deg,
+        #ff252d,
+        #d90008
+    );
 
-justify-content: center;
+    border: 1px solid #ff252d;
+    border-radius: 7px;
 
-gap: 8px;
+    color: #ffffff;
 
-padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 800;
 
-border: none;
+    text-decoration: none;
 
-border-radius: 10px;
-
-background: linear-gradient(
-
-135deg,
-
-var(--mf-vermelho-principal),
-
-var(--mf-vermelho-claro)
-
-);
-
-color: #ffffff !important;
-
-font-weight: 700;
-
-box-shadow: 0 6px 18px rgba(217, 0, 0, 0.22);
-
-transition: 0.3s ease;
-
+    transition: 0.3s ease;
 }
-
-
 
 .btn-principal:hover {
+    background: #d90008;
+    border-color: #d90008;
 
-transform: translateY(-2px);
+    color: #ffffff;
 
-background: linear-gradient(
+    transform: translateY(-3px);
 
-135deg,
-
-var(--mf-vermelho-escuro),
-
-var(--mf-vermelho-principal)
-
-);
-
-box-shadow: 0 10px 24px rgba(23, 23, 23, 0.25);
-
+    box-shadow:
+        0 10px 25px rgba(255, 0, 0, 0.25);
 }
 
-
-
-.btn-suporte-whatsapp {
-
-display: inline-flex;
-
-align-items: center;
-
-justify-content: center;
-
-gap: 8px;
-
-padding: 12px 24px;
-
-border-radius: 10px;
-
-background: var(--mf-sucesso);
-
-color: #ffffff !important;
-
-font-weight: 700;
-
-box-shadow: 0 6px 18px rgba(25, 135, 84, 0.20);
-
-transition: 0.3s ease;
-
+.btn-principal i {
+    font-size: 18px;
 }
-
-
-
-.btn-suporte-whatsapp:hover {
-
-background: var(--mf-sucesso-hover);
-
-color: #ffffff !important;
-
-transform: translateY(-2px);
-
-}
-
-
 
 /* =========================================================
-
-   FOOTER
-
-   ========================================================= */
-
-
-
-footer {
-
-background: var(--mf-vermelho-escuro);
-
-color: #ffffff;
-
-border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-}
-
-
-
-footer h4,
-
-footer h5,
-
-footer h6 {
-
-color: #ffffff;
-
-}
-
-
-
-footer p,
-
-footer span {
-
-color: rgba(255, 255, 255, 0.72);
-
-}
-
-
-
-footer a {
-
-color: rgba(255, 255, 255, 0.78);
-
-}
-
-
-
-footer a:hover {
-
-color: #ffffff;
-
-}
-
-
-
-footer .bi {
-
-color: #ffffff;
-
-}
-
-
-
-/* =========================================================
-
-   FORMULÁRIOS
-
-   ========================================================= */
-
-
-
-.form-label {
-
-color: var(--mf-vermelho-escuro);
-
-font-weight: 600;
-
-}
-
-
-
-.form-control,
-
-.form-select {
-
-min-height: 46px;
-
-border: 1px solid var(--mf-borda);
-
-border-radius: 10px;
-
-color: var(--mf-texto-escuro);
-
-background: #ffffff;
-
-box-shadow: none;
-
-}
-
-
-
-.form-control:focus,
-
-.form-select:focus {
-
-border-color: var(--mf-vermelho-principal);
-
-box-shadow: 0 0 0 0.2rem rgba(217, 0, 0, 0.12);
-
-}
-
-
-
-/* =========================================================
-
-   TABELAS
-
-   ========================================================= */
-
-
-
-.table {
-
-background: #ffffff;
-
-border-radius: 12px;
-
-overflow: hidden;
-
-}
-
-
-
-.table thead {
-
-background: var(--mf-vermelho-escuro);
-
-color: #ffffff;
-
-}
-
-
-
-.table tbody tr {
-
-transition: background 0.2s ease;
-
-}
-
-
-
-.table tbody tr:hover {
-
-background: #fff1f1;
-
-}
-
-
-
-/* =========================================================
-
-   ALERTAS
-
-   ========================================================= */
-
-
-
-.alert {
-
-border-radius: 12px;
-
-border: 1px solid var(--mf-borda);
-
-}
-
-
-
-/* =========================================================
-
-   RESPONSIVIDADE
-
-   ========================================================= */
-
-
+   RESPONSIVIDADE - TABLETS
+========================================================= */
 
 @media (max-width: 991px) {
 
-.hero-historia {
+    .hero-historia {
+        padding: 80px 0;
+    }
 
-min-height: 290px;
+    .historia-section,
+    .proposito-section,
+    .acessibilidade-section,
+    .frase-section {
+        padding: 75px 0;
+    }
 
-padding: 60px 20px;
+    .historia-section h2,
+    .acessibilidade-section h2,
+    .titulo-proposito h2 {
+        font-size: 30px;
+    }
 
+    .historia-card {
+        padding: 30px;
+    }
 }
 
+/* =========================================================
+   RESPONSIVIDADE - CELULARES
+========================================================= */
 
-.historia-section,
+@media (max-width: 767px) {
 
-.proposito-section,
+    .hero-historia {
+        padding: 65px 0;
+    }
 
-.acessibilidade-section {
+    .hero-historia h1 {
+        font-size: 40px;
+    }
 
-padding: 60px 0;
+    .hero-historia p {
+        font-size: 15px;
+    }
 
+    .historia-section,
+    .proposito-section,
+    .acessibilidade-section,
+    .frase-section {
+        padding: 60px 0;
+    }
+
+    .historia-section h2,
+    .acessibilidade-section h2,
+    .titulo-proposito h2 {
+        font-size: 27px;
+    }
+
+    .historia-card {
+        padding: 25px;
+    }
+
+    .historia-card h3 {
+        font-size: 21px;
+    }
+
+    .proposito-card {
+        padding: 25px;
+    }
+
+    .acessibilidade-box {
+        padding: 22px;
+    }
+
+    .item-acessibilidade {
+        gap: 12px;
+    }
+
+    .item-acessibilidade > i {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+
+        font-size: 18px;
+    }
+
+    .frase-conteudo h2 {
+        font-size: 30px;
+    }
+
+    .frase-conteudo p {
+        font-size: 14px;
+    }
+
+    .btn-principal {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
-}
-
-
-
-@media (max-width: 768px) {
-
-.hero-historia h1 {
-
-font-size: 2.3rem;
-
-}
-
-
-
-.hero-historia p {
-
-font-size: 0.98rem;
-
-}
-
-
-
-.historia-section,
-
-.proposito-section,
-
-.acessibilidade-section {
-
- padding: 50px 0;
-
-}
-
-
-
-.historia-card,
-
-.proposito-card {
-
-padding: 24px;
-
-}
-
-
-
-.acessibilidade-box {
-
-    padding: 25px;
-
-}
-
-
-
-.frase-section {
-
-padding: 60px 20px;
-
-}
-
-}
-
-
-
-@media (max-width: 576px) {
-
-.hero-historia {
-
-min-height: 260px;
-
-padding: 50px 15px;
-
-}
-
-
-
-.hero-historia h1 {
-
-font-size: 2rem;
-
-}
-
-
-
-.section-title {
-
-font-size: 1.65rem;
-
-}
-
-
-
-.historia-section,
-
-.proposito-section,
-
-.acessibilidade-section {
-
-padding: 40px 0;
-
-}
-
-
-
-.item-acessibilidade {
-
-gap: 10px;
-
-}
-
-
-
-.btn-principal,
-
-.btn-suporte-whatsapp {
-
-width: 100%;
-
-}
-
+/* =========================================================
+   RESPONSIVIDADE - MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-historia h1 {
+        font-size: 34px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+    }
+
+    .historia-section h2,
+    .acessibilidade-section h2,
+    .titulo-proposito h2 {
+        font-size: 24px;
+    }
+
+    .historia-section p,
+    .acessibilidade-section p {
+        font-size: 14px;
+    }
+
+    .frase-conteudo h2 {
+        font-size: 26px;
+    }
+
+    .frase-conteudo > i {
+        font-size: 42px;
+    }
 }

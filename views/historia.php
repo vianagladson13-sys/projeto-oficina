@@ -29,86 +29,7 @@
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-contagem">
-
-        <div class="container">
-
-            <!-- Logo / Nome -->
-            <a class="navbar-brand d-flex align-items-center" href="index.php">
-
-                <div class="ms-2">
-                    <span class="nome-site">Mecanica MF</span>
-
-                    <small class="d-block">
-                        Centro Automotivo
-                    </small>
-                </div>
-
-            </a>
-
-            <!-- Botão Mobile -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menuNavbar"
-                aria-controls="menuNavbar"
-                aria-expanded="false"
-                aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="menuNavbar">
-
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">
-                            Início
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="historia.php">
-                            Nossa História
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="eventos.php">
-                            Serviços Automotivos
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="negocios.php">
-                            Negócios
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="servicos.php">
-                            Serviços
-                        </a>
-                    </li>
-
-                    <li class="nav-item ms-lg-3">
-                        <a href="login.php" class="btn btn-login">
-                            Entrar
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
+    
 
 
     <!-- =========================
@@ -455,4 +376,3 @@
 </body>
 
 </html>
-```

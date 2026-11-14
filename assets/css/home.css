@@ -1,0 +1,207 @@
+
+/* =========================================================
+   SISTEMA DE CADASTROS - MECANICA MF
+   ========================================================= */
+
+:root {
+    --mf-preto: #080808;
+    --mf-preto-card: #141414;
+    --mf-vermelho: #dc2626;
+    --mf-vermelho-hover: #b91c1c;
+    --mf-branco: #ffffff;
+    --mf-cinza: #a1a1aa;
+    --mf-borda: #292929;
+}
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.container.mt-5 {
+    padding-bottom: 50px;
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.container.mt-5 > div.mb-5 {
+    border-left: 5px solid var(--mf-vermelho);
+    padding-left: 20px;
+}
+
+.container.mt-5 h2 {
+    color: var(--mf-preto);
+
+    font-size: 32px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    margin-bottom: 12px;
+}
+
+.container.mt-5 .text-muted {
+    color: #6b7280 !important;
+    font-size: 15px;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.container.mt-5 .card {
+    background: var(--mf-branco);
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER DOS CARDS */
+
+.container.mt-5 .card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--mf-vermelho);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* CONTEÚDO */
+
+.container.mt-5 .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 25px !important;
+}
+
+/* =========================================================
+   ÍCONES
+   ========================================================= */
+
+.container.mt-5 .card-body > i {
+    color: var(--mf-vermelho) !important;
+
+    font-size: 55px !important;
+
+    margin-bottom: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+/* ANIMAÇÃO ÍCONE */
+
+.container.mt-5 .card:hover .card-body > i {
+    transform: scale(1.12);
+}
+
+/* =========================================================
+   TÍTULOS DOS CARDS
+   ========================================================= */
+
+.container.mt-5 .card-title {
+    color: var(--mf-preto);
+
+    font-size: 21px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.container.mt-5 .card-text {
+    color: #6b7280 !important;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    min-height: 48px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.container.mt-5 .btn-primary {
+    background: var(--mf-vermelho);
+
+    border: 1px solid var(--mf-vermelho);
+
+    border-radius: 8px;
+
+    padding: 12px 22px;
+
+    color: var(--mf-branco);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER BOTÃO */
+
+.container.mt-5 .btn-primary:hover {
+    background: var(--mf-vermelho-hover);
+
+    border-color: var(--mf-vermelho-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.25);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container.mt-5 h2 {
+        font-size: 26px;
+    }
+
+    .container.mt-5 .card-body {
+        padding: 30px 20px !important;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .container.mt-5 {
+        margin-top: 30px !important;
+    }
+
+    .container.mt-5 h2 {
+        font-size: 23px;
+    }
+
+    .container.mt-5 .text-muted {
+        font-size: 14px;
+    }
+
+    .container.mt-5 .card-body > i {
+        font-size: 45px !important;
+    }
+
+}

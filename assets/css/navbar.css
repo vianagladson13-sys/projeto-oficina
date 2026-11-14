@@ -1,12 +1,33 @@
 
-/* =====================================================
+/* =========================================================
    NAVBAR - MECANICA MF
-   ===================================================== */
+   ========================================================= */
+
+:root {
+    --mf-preto: #080808;
+    --mf-preto-secundario: #111111;
+    --mf-vermelho: #dc2626;
+    --mf-vermelho-hover: #b91c1c;
+    --mf-branco: #ffffff;
+    --mf-cinza: #b8b8b8;
+}
+
+/* NAVBAR */
 
 .mf-navbar {
-    width: 100%;
-    background-color: #061b49;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(
+        135deg,
+        var(--mf-preto),
+        var(--mf-preto-secundario)
+    );
+
+    min-height: 85px;
+    padding: 12px 0;
+
+    border-bottom: 3px solid var(--mf-vermelho);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+
     position: relative;
     z-index: 1000;
 }
@@ -14,69 +35,204 @@
 /* CONTAINER */
 
 .mf-navbar-container {
-    min-height: 78px;
+    max-width: 1250px;
 }
 
-/* NOME DA EMPRESA */
+/* LOGO / NOME */
 
 .mf-navbar-brand {
-    color: #ffffff !important;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+    line-height: 1.2;
 }
+
+/* NOME MECANICA MF */
 
 .mf-navbar-brand .nome-site {
-    font-size: 1.25rem;
+    color: var(--mf-branco);
+
+    font-size: 27px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
 }
+
+/* SUBTÍTULO */
 
 .mf-navbar-brand small {
-    color: #cbd5e1;
-    font-size: 0.75rem;
-    font-weight: 400;
+    color: var(--mf-vermelho);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-top: 5px;
 }
 
-/* LINKS */
+/* HOVER LOGO */
+
+.mf-navbar-brand:hover .nome-site {
+    color: var(--mf-vermelho);
+}
+
+/* MENU */
 
 .mf-navbar .navbar-nav {
     gap: 8px;
 }
 
+/* LINKS */
+
 .mf-navbar .nav-link {
-    color: #e2e8f0;
-    padding: 10px 12px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease,
-                color 0.2s ease;
+    color: var(--mf-cinza);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 12px 15px !important;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    position: relative;
+
+    transition: all 0.3s ease;
 }
 
-.mf-navbar .nav-link:hover,
-.mf-navbar .nav-link:focus {
-    color: #ffffff;
-    background-color: #0b5ed7;
+/* LINHA ANIMADA */
+
+.mf-navbar .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 5px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--mf-vermelho);
+
+    transition: width 0.3s ease;
 }
 
-/* BOTÃO DO MENU MOBILE */
+/* HOVER */
+
+.mf-navbar .nav-link:hover {
+    color: var(--mf-branco);
+}
+
+.mf-navbar .nav-link:hover::after {
+    width: calc(100% - 30px);
+}
+
+/* BOTÃO MOBILE */
 
 .mf-navbar .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--mf-vermelho);
+
+    border-radius: 8px;
+
+    padding: 8px 11px;
+
+    transition: all 0.3s ease;
+}
+
+.mf-navbar .navbar-toggler:hover {
+    background: var(--mf-vermelho);
 }
 
 .mf-navbar .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
 }
 
-/* TELAS PEQUENAS */
+/* ÍCONE MOBILE */
 
-@media (max-width: 991.98px) {
+.mf-navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .mf-navbar {
+        padding: 15px 0;
+    }
+
     .mf-navbar .navbar-collapse {
-        padding: 12px 0 18px;
+        background: #111111;
+
+        margin-top: 15px;
+        padding: 15px;
+
+        border-radius: 10px;
+
+        border: 1px solid #292929;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
     .mf-navbar .navbar-nav {
-        gap: 4px;
+        gap: 3px;
+        align-items: stretch !important;
     }
 
     .mf-navbar .nav-link {
-        padding: 12px;
+        padding: 13px 15px !important;
+
+        border-radius: 6px;
     }
+
+    .mf-navbar .nav-link:hover {
+        background: rgba(220, 38, 38, 0.12);
+
+        color: var(--mf-branco);
+    }
+
+    .mf-navbar .nav-link::after {
+        display: none;
+    }
+
+    .mf-navbar-brand .nome-site {
+        font-size: 23px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 576px) {
+
+    .mf-navbar {
+        min-height: 75px;
+    }
+
+    .mf-navbar-brand .nome-site {
+        font-size: 21px;
+    }
+
+    .mf-navbar-brand small {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .mf-navbar-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
 }

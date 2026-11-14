@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastros de Veiculos</title>
+    <title>Mecanica MF - Centro Automotivo</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -14,25 +15,29 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- CSS DA NAVBAR -->
     <link rel="stylesheet" href="assets/css/navbar.css">
 
-</head>
+    <!-- CSS DO RODAPÉ -->
+    <link rel="stylesheet" href="assets/css/footer.css">
 
+</head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
     <?php
+
     // Captura a página solicitada pela URL
     $page = $_GET["page"] ?? "landing";
 
     // Páginas carregadas diretamente pela estrutura views
     $paginasPublicas = [
-        "landing" => __DIR__ . "/views/landing.php",
-        "login"   => __DIR__ . "/views/login.php",
-        "cliente" => __DIR__ . "/views/cliente.php",
+        "landing"  => __DIR__ . "/views/landing.php",
+        "login"    => __DIR__ . "/views/login.php",
+        "cliente"  => __DIR__ . "/views/cliente.php",
         "historia" => __DIR__ . "/views/historia.php",
-    
     ];
+
     ?>
 
     <!-- =========================================
@@ -42,8 +47,6 @@
     <?php if ($page !== "login" && $page !== "landing"): ?>
 
         <?php
-        // Inclui o navbar em todas as páginas,
-        // exceto na tela de login.
         require __DIR__ . "/includes/navbar.php";
         ?>
 
@@ -57,6 +60,7 @@
     <main class="flex-grow-1">
 
         <?php
+
         // Se a página estiver na lista, carrega sua view.
         if (array_key_exists($page, $paginasPublicas)) {
 
@@ -69,18 +73,19 @@
             require __DIR__ . "/routes.php";
 
         }
+
         ?>
 
     </main>
 
 
     <!-- =========================================
-         RODAPÉ
+         RODAPÉ - MECANICA MF
          ========================================= -->
 
-    <footer class="bg-dark text-white text-center py-3 mt-0">
-
-    </footer>
+    <?php
+    require __DIR__ . "/includes/footer.php";
+    ?>
 
 
     <!-- =========================================
@@ -96,6 +101,5 @@
     <script src="js/helpers.js"></script>
 
 </body>
-
 
 </html>
