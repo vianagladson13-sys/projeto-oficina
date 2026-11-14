@@ -1,514 +1,968 @@
-/* MECANICA MF - MANUTENÇÃO | Tema Preto / Vermelho / Branco / Cinza */
+
+/* =========================================================
+   MANUTENCAO.CSS
+   MECANICA MF
+   PADRÃO PRETO E VERMELHO
+   ========================================================= */
+
 :root {
-    --vermelho-escuro: #080808;
-    --vermelho: #d90000;
-    --vermelho-hover: #a80000;
-    --vermelho-claro: #fff0f0;
-    --cinza-borda: #d7dee7;
-    --cinza-texto: #667085;
-    --branco: #ffffff;
-    --preto: #171717;
+    --mf-vermelho: #ff252d;
+    --mf-vermelho-escuro: #d90008;
+    --mf-preto: #050505;
+    --mf-card: #101010;
+    --mf-card-hover: #171717;
+    --mf-branco: #ffffff;
+    --mf-cinza: #bdbdbd;
+    --mf-borda: #303030;
 }
 
-/* PÁGINA */
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
 .manutencao-page {
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
+    padding: 35px 20px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 0, 0, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #050505,
+            #100000,
+            #210000
+        );
+
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #f1f1f1, #ffffff, #f7f7f7);
 }
 
-/* PAINEL PRINCIPAL */
+
+/* =========================================================
+   PAINEL PRINCIPAL
+   ========================================================= */
+
 #painel-manutencao {
     width: 100%;
-    max-width: 760px;
-    background: var(--branco);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 18px;
+    max-width: 1100px;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.09);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.65),
+        0 0 30px rgba(255, 0, 0, 0.04);
 }
 
-/* CABEÇALHO */
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
 .manutencao-header {
-    min-height: 105px;
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 23px 30px;
-    background: linear-gradient(135deg, #080808, #650000);
-    color: var(--branco);
+    gap: 22px;
+
+    padding: 35px 40px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 0, 0, 0.13),
+            transparent 45%
+        ),
+        #080808;
+
+    border-bottom: 1px solid #292929;
 }
+
+
+/* ÍCONE */
+
 .manutencao-icon {
-    width: 58px;
-    height: 58px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+
+    background: linear-gradient(
+        135deg,
+        #ff252d,
+        #c90008
+    );
+
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #ff4d4d;
-    font-size: 26px;
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.20);
 }
+
+.manutencao-icon i {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+
+/* TÍTULO */
+
 .manutencao-header h2 {
-    margin: 0;
-    color: var(--branco);
-    font-size: 21px;
-    font-weight: 700;
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
+
+
+/* SUBTÍTULO */
+
 .manutencao-header p {
-    margin: 5px 0 0;
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 12px;
+    margin: 0;
+
+    color: #bdbdbd;
+
+    font-size: 15px;
 }
 
-/* CORPO */
-.manutencao-body { padding: 30px; }
 
-/* INFORMAÇÃO */
+/* =========================================================
+   CORPO
+   ========================================================= */
+
+.manutencao-body {
+    padding: 35px 40px;
+
+    background: #080808;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO
+   ========================================================= */
+
 .manutencao-info {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    padding: 14px;
-    margin-bottom: 20px;
-    border-radius: 9px;
-    background: #fff6f6;
-    border: 1px solid #f2cccc;
-    color: var(--cinza-texto);
-    font-size: 12px;
-    line-height: 1.6;
-}
-.manutencao-info i {
-    color: var(--vermelho);
-    font-size: 17px;
-    flex-shrink: 0;
+    gap: 15px;
+
+    padding: 20px 22px;
+    margin-bottom: 30px;
+
+    background: #111111;
+
+    border: 1px solid #303030;
+    border-left: 4px solid #ff252d;
+
+    border-radius: 8px;
+
+    color: #bdbdbd;
+
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-/* BOTÕES DE ESCOLHA */
-.opcoes-manutencao {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.manutencao-info i {
+    color: #ff252d;
+    font-size: 22px;
 }
+
+
+/* =========================================================
+   OPÇÕES
+   ========================================================= */
+
+.opcoes-manutencao {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* BOTÕES */
+
 .btn-manutencao {
-    width: 100%;
-    min-height: 90px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 16px;
-    border-radius: 12px;
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease,
-        background 0.2s ease, border-color 0.2s ease;
-}
-.btn-manutencao:hover { transform: translateY(-2px); }
+    gap: 18px;
 
-/* ÍCONE DA MANUTENÇÃO */
+    width: 100%;
+    padding: 25px;
+
+    background: #101010;
+
+    border: 1px solid #353535;
+    border-radius: 12px;
+
+    color: #ffffff;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn-manutencao:hover {
+    background: #171717;
+
+    border-color: #ff252d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 0, 0, 0.10);
+}
+
+.btn-manutencao.selecionado {
+    background: #1b0808;
+
+    border-color: #ff252d;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 37, 45, 0.10);
+}
+
+
+/* ÍCONES */
+
 .icone-manutencao {
-    width: 52px;
-    height: 52px;
-    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 11px;
-    font-size: 23px;
+
+    background: #1a0808;
+
+    border: 1px solid #4b1515;
+    border-radius: 10px;
+
+    color: #ff252d;
+    font-size: 27px;
+
+    transition: all 0.3s ease;
 }
 
-/* TEXTO DA MANUTENÇÃO */
+.btn-manutencao:hover .icone-manutencao,
+.btn-manutencao.selecionado .icone-manutencao {
+    background: #ff252d;
+    color: #ffffff;
+    border-color: #ff252d;
+}
+
+
+/* TEXTOS */
+
 .texto-manutencao {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+
+    flex: 1;
 }
-.texto-manutencao strong { font-size: 14px; font-weight: 700; }
-.texto-manutencao span { color: var(--cinza-texto); font-size: 12px; }
+
+.texto-manutencao strong {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.texto-manutencao span {
+    color: #a3a3a3;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 
 /* SETA */
-.seta-manutencao { color: #98a2b3; font-size: 18px; transition: 0.2s ease; }
 
-/* MANUTENÇÃO PREVENTIVA */
-.btn-preventiva {
-    background: #fff8f8;
-    border: 1px solid #f0b8b8;
-    color: #8f0000;
+.seta-manutencao {
+    color: #ff252d;
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
 }
-.btn-preventiva .icone-manutencao {
-    background: var(--vermelho);
-    color: var(--branco);
-}
-.btn-preventiva:hover,
-.btn-preventiva.selecionado {
-    background: #fff0f0;
-    border-color: var(--vermelho);
-    box-shadow: 0 8px 20px rgba(217, 0, 0, 0.14);
-}
-.btn-preventiva:hover .seta-manutencao,
-.btn-preventiva.selecionado .seta-manutencao {
-    color: var(--vermelho);
+
+.btn-manutencao.selecionado .seta-manutencao {
     transform: rotate(180deg);
 }
 
-/* MANUTENÇÃO CORRETIVA */
-.btn-corretiva {
-    background: #f8f8f8;
-    border: 1px solid #d7dee7;
-    color: #171717;
-}
-.btn-corretiva .icone-manutencao {
-    background: #171717;
-    color: var(--branco);
-}
-.btn-corretiva:hover,
-.btn-corretiva.selecionado {
-    background: #f1f1f1;
-    border-color: var(--vermelho);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
-}
-.btn-corretiva:hover .seta-manutencao,
-.btn-corretiva.selecionado .seta-manutencao {
-    color: var(--vermelho);
-    transform: rotate(180deg);
-}
 
-/* CONTEÚDO DAS MANUTENÇÕES */
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
 .conteudo-manutencao {
     display: none;
+
     margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #e5e7eb;
-    animation: aparecer 0.25s ease;
+    padding: 30px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #303030;
+    border-radius: 12px;
+
+    animation: mf-aparecer 0.35s ease;
 }
-.conteudo-manutencao.ativo { display: block; }
+
+.conteudo-manutencao.ativo {
+    display: block;
+}
+
 .conteudo-manutencao.manutencao-selecionada {
-    border: 1px solid var(--vermelho);
-    border-radius: 10px;
-    padding: 25px;
+    border-color: #ff252d;
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.06);
 }
 
-/* ANIMAÇÃO DO CONTEÚDO */
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(-8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
-/* TÍTULO DO CONTEÚDO */
+/* =========================================================
+   TÍTULO DO CONTEÚDO
+   ========================================================= */
+
 .titulo-conteudo {
     display: flex;
     align-items: center;
-    gap: 13px;
-    margin-bottom: 22px;
+    gap: 18px;
+
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #292929;
 }
+
 .titulo-icone {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+
+    background: #1a0808;
+
+    border: 1px solid #4b1515;
     border-radius: 10px;
-    background: var(--vermelho-claro);
-    color: var(--vermelho);
-    font-size: 20px;
-}
-.titulo-icone.corretiva { background: #eeeeee; color: #171717; }
-.titulo-conteudo h3 {
-    margin: 0;
-    font-size: 17px;
-    color: var(--preto);
-    font-weight: 700;
-}
-.titulo-conteudo p {
-    margin: 4px 0 0;
-    color: var(--cinza-texto);
-    font-size: 12px;
+
+    color: #ff252d;
+    font-size: 25px;
 }
 
-/* GRUPO DE TAREFAS */
-.grupo-tarefas { margin-bottom: 25px; }
-.grupo-tarefas:last-child { margin-bottom: 0; }
+.titulo-icone.corretiva {
+    background: #1a0808;
+    color: #ff252d;
+    border-color: #4b1515;
+}
+
+.titulo-conteudo h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.titulo-conteudo p {
+    margin: 0;
+
+    color: #a3a3a3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GRUPOS
+   ========================================================= */
+
+.grupo-tarefas {
+    margin-bottom: 25px;
+    padding: 25px;
+
+    background: #111111;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
 .grupo-tarefas h4 {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    color: #344054;
-    font-size: 14px;
-    font-weight: 700;
-}
-.grupo-tarefas h4 i { color: var(--vermelho); font-size: 16px; }
+    gap: 12px;
 
-/* TAREFA */
+    margin: 0 0 22px;
+    padding-bottom: 18px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+
+    border-bottom: 1px solid #292929;
+}
+
+.grupo-tarefas h4 i {
+    color: #ff252d;
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   TAREFAS
+   ========================================================= */
+
 .tarefa {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 14px;
-    margin-bottom: 8px;
-    background: var(--branco);
-    border: 1px solid #e3e8ef;
-    border-radius: 10px;
-    transition: 0.2s ease;
+    gap: 15px;
+
+    padding: 18px 15px;
+    margin-bottom: 12px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #252525;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
 }
+
+.tarefa:last-child {
+    margin-bottom: 0;
+}
+
 .tarefa:hover {
-    border-color: #efb6b6;
-    background: #fffafa;
-    transform: translateX(2px);
+    background: #151515;
+
+    border-color: #4b1515;
+
+    transform: translateX(3px);
 }
+
+
+/* CHECK */
+
+.check-tarefa {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1a0808;
+
+    border: 1px solid #4b1515;
+    border-radius: 8px;
+
+    color: #ff252d;
+    font-size: 18px;
+}
+
+.check-tarefa.corretiva {
+    background: #1a0808;
+    border-color: #4b1515;
+    color: #ff252d;
+}
+
+
+/* TEXTOS */
+
 .tarefa strong {
     display: block;
-    margin-bottom: 4px;
-    color: #17202a;
-    font-size: 13px;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
 }
+
 .tarefa p {
     margin: 0;
-    color: var(--cinza-texto);
+
+    color: #a3a3a3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÃO SELECIONAR
+   ========================================================= */
+
+.btn-selecionar-manutencao {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 25px;
+    padding: 15px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ff252d,
+        #d90008
+    );
+
+    border: none;
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.btn-selecionar-manutencao:hover {
+    background: linear-gradient(
+        135deg,
+        #ff4148,
+        #ff0008
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 0, 0, 0.20);
+}
+
+.btn-selecionar-manutencao.selecionado {
+    background: #151515;
+
+    color: #ff252d;
+
+    border: 1px solid #ff252d;
+}
+
+.btn-selecionar-manutencao i {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   AGENDAMENTO
+   ========================================================= */
+
+.agendamento-manutencao {
+    display: none;
+
+    margin-top: 25px;
+
+    animation: mf-aparecer 0.35s ease;
+}
+
+.agendamento-manutencao.ativo {
+    display: block;
+}
+
+
+/* =========================================================
+   CARD CALENDÁRIO
+   ========================================================= */
+
+.agendamento-calendario {
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 0, 0, 0.10),
+            transparent 45%
+        ),
+        #0d0d0d;
+
+    border: 1px solid #303030;
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   TÍTULO AGENDAMENTO
+   ========================================================= */
+
+.agendamento-titulo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #292929;
+}
+
+.agendamento-icone {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1a0808;
+
+    border: 1px solid #4b1515;
+    border-radius: 10px;
+
+    color: #ff252d;
+    font-size: 25px;
+}
+
+.agendamento-titulo h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.agendamento-titulo p {
+    margin: 0;
+
+    color: #a3a3a3;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CALENDÁRIO
+   ========================================================= */
+
+.calendario-area {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* CAMPO DATA */
+
+.campo-data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo-data label {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.campo-data input[type="date"] {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 12px 15px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border: 1px solid #353535;
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    color-scheme: dark;
+
+    transition: all 0.25s ease;
+}
+
+.campo-data input[type="date"]:focus {
+    outline: none;
+
+    border-color: #ff252d;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 37, 45, 0.12);
+}
+
+.campo-data small {
+    color: #777777;
     font-size: 12px;
     line-height: 1.6;
 }
 
-/* CHECK DA TAREFA */
-.check-tarefa {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background: var(--vermelho-claro);
-    color: var(--vermelho);
-    font-size: 15px;
-}
-.check-tarefa.corretiva { background: #eeeeee; color: #171717; }
 
-/* BOTÃO SELECIONAR MANUTENÇÃO */
-.btn-selecionar-manutencao {
-    width: 100%;
-    margin-top: 25px;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: var(--branco);
-    color: var(--vermelho);
-    border: 2px solid var(--vermelho);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.btn-selecionar-manutencao:hover {
-    background: var(--vermelho);
-    color: var(--branco);
-    box-shadow: 0 6px 15px rgba(217, 0, 0, 0.18);
-}
-.btn-selecionar-manutencao i { font-size: 18px; }
-.btn-selecionar-manutencao.selecionado {
-    background: var(--vermelho);
-    border-color: var(--vermelho);
-    color: var(--branco);
-}
+/* =========================================================
+   DATA SELECIONADA
+   ========================================================= */
 
-/* AGENDAMENTO */
-.agendamento-manutencao {
-    display: none;
-    width: 100%;
-    margin-top: 30px;
-    animation: aparecerCalendario 0.35s ease;
-}
-.agendamento-manutencao.ativo { display: block; }
-
-/* CARD DO CALENDÁRIO */
-.agendamento-calendario {
-    width: 100%;
-    padding: 30px;
-    background: var(--branco);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* CABEÇALHO DO CALENDÁRIO */
-.agendamento-titulo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5eaf0;
-}
-.agendamento-icone {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    background: var(--vermelho);
-    color: var(--branco);
-    border-radius: 12px;
-    font-size: 22px;
-    box-shadow: 0 5px 15px rgba(217, 0, 0, 0.20);
-}
-.agendamento-titulo h3 {
-    margin: 0;
-    color: var(--preto);
-    font-size: 20px;
-    font-weight: 700;
-}
-.agendamento-titulo p {
-    margin: 5px 0 0;
-    color: var(--cinza-texto);
-    font-size: 13px;
-}
-
-/* ÁREA DO CALENDÁRIO */
-.calendario-area { display: flex; flex-direction: column; gap: 10px; }
-.calendario-area label {
-    color: var(--preto);
-    font-size: 14px;
-    font-weight: 700;
-}
-
-/* CAMPO DA DATA */
-.campo-data { width: 100%; }
-.campo-data input[type="date"] {
-    width: 100%;
-    height: 54px;
-    padding: 0 16px;
-    background: #f8f8f8;
-    color: var(--preto);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 11px;
-    font-size: 15px;
-    font-weight: 500;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.campo-data input[type="date"]:hover { border-color: var(--vermelho); }
-.campo-data input[type="date"]:focus {
-    background: var(--branco);
-    border-color: var(--vermelho);
-    box-shadow: 0 0 0 4px rgba(217, 0, 0, 0.10);
-}
-
-/* ÍCONE NATIVO DO CALENDÁRIO */
-.campo-data input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    opacity: 0.75;
-    transition: opacity 0.2s ease;
-}
-.campo-data input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
-
-/* TEXTO DE AJUDA */
-.calendario-ajuda {
-    margin-top: 8px;
-    color: var(--cinza-texto);
-    font-size: 12px;
-    line-height: 1.5;
-}
-.calendario-ajuda i { margin-right: 5px; color: var(--vermelho); }
-
-/* DATA SELECIONADA */
 .data-selecionada {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 15px;
-    padding: 15px;
-    background: var(--vermelho-claro);
-    border: 1px solid #f0c5c5;
+    gap: 18px;
+
+    padding: 20px;
+
+    background: #111111;
+
+    border: 1px solid #353535;
+    border-left: 4px solid #ff252d;
+
     border-radius: 10px;
-    color: var(--preto);
-    font-size: 14px;
+}
+
+.data-selecionada > i {
+    color: #ff252d;
+    font-size: 30px;
+}
+
+.data-selecionada div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.data-selecionada span {
+    color: #a3a3a3;
+    font-size: 12px;
     font-weight: 600;
 }
-.data-selecionada.ativo { display: flex; }
-.data-selecionada > i { color: var(--vermelho); font-size: 22px; }
-.data-selecionada span {
-    display: block;
-    margin-bottom: 3px;
-    color: var(--cinza-texto);
-    font-size: 12px;
-}
+
 .data-selecionada strong {
-    display: block;
-    color: var(--preto);
-    font-size: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
 }
 
-/* BOTÃO CONFIRMAR AGENDAMENTO */
-.btn-confirmar-agendamento {
-    width: 100%;
-    height: 52px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 10px;
-    background: var(--vermelho);
-    color: var(--branco);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.btn-confirmar-agendamento:hover {
-    background: var(--vermelho-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(217, 0, 0, 0.20);
-}
-.btn-confirmar-agendamento:active { transform: translateY(0); }
 
-/* ANIMAÇÃO DO CALENDÁRIO */
-@keyframes aparecerCalendario {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
+@keyframes mf-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .agendamento-calendario { padding: 22px; }
-    .agendamento-titulo { align-items: flex-start; gap: 12px; }
-    .agendamento-icone { width: 46px; height: 46px; font-size: 20px; }
-    .agendamento-titulo h3 { font-size: 18px; }
-    .agendamento-titulo p { font-size: 12px; }
-    .campo-data input[type="date"] { height: 52px; }
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .manutencao-page {
+        padding: 25px 15px;
+    }
+
+    .manutencao-header {
+        padding: 25px;
+    }
+
+    .manutencao-body {
+        padding: 25px;
+    }
+
+    .opcoes-manutencao {
+        grid-template-columns: 1fr;
+    }
+
+    .calendario-area {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* CELULAR */
-@media (max-width: 576px) {
-    .manutencao-page { padding: 20px 12px; }
-    .manutencao-header { padding: 20px; }
-    .manutencao-body { padding: 20px; }
-    .manutencao-header h2 { font-size: 18px; }
-    .btn-manutencao { min-height: 85px; }
-    .titulo-conteudo { align-items: flex-start; }
-    .titulo-conteudo h3 { font-size: 15px; }
-    .tarefa { padding: 12px; }
-    .agendamento-calendario { padding: 20px; }
-    .agendamento-titulo { gap: 10px; }
-    .agendamento-icone { width: 42px; height: 42px; font-size: 18px; }
-    .agendamento-titulo h3 { font-size: 17px; }
-}
 
-/* CELULAR PEQUENO */
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 480px) {
-    .agendamento-calendario { padding: 18px; }
-    .agendamento-titulo p { font-size: 11px; }
-    .btn-selecionar-manutencao { font-size: 13px; }
-    .campo-data input[type="date"] { height: 50px; font-size: 14px; }
+
+    .manutencao-page {
+        padding: 15px 10px;
+    }
+
+    .manutencao-header {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .manutencao-header h2 {
+        font-size: 18px;
+    }
+
+    .manutencao-header p {
+        font-size: 12px;
+    }
+
+    .manutencao-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+
+    .manutencao-icon i {
+        font-size: 20px;
+    }
+
+    .manutencao-body {
+        padding: 20px 15px;
+    }
+
+    .manutencao-info {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .btn-manutencao {
+        padding: 18px 15px;
+        gap: 12px;
+    }
+
+    .icone-manutencao {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 22px;
+    }
+
+    .texto-manutencao strong {
+        font-size: 14px;
+    }
+
+    .texto-manutencao span {
+        font-size: 12px;
+    }
+
+    .conteudo-manutencao {
+        padding: 20px 15px;
+    }
+
+    .titulo-conteudo {
+        gap: 12px;
+    }
+
+    .titulo-icone {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 20px;
+    }
+
+    .titulo-conteudo h3 {
+        font-size: 16px;
+    }
+
+    .titulo-conteudo p {
+        font-size: 12px;
+    }
+
+    .grupo-tarefas {
+        padding: 15px;
+    }
+
+    .grupo-tarefas h4 {
+        font-size: 14px;
+    }
+
+    .tarefa {
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .tarefa strong {
+        font-size: 13px;
+    }
+
+    .tarefa p {
+        font-size: 12px;
+    }
+
+    .check-tarefa {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 15px;
+    }
+
+    .btn-selecionar-manutencao {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .agendamento-calendario {
+        padding: 20px 15px;
+    }
+
+    .agendamento-titulo {
+        gap: 12px;
+    }
+
+    .agendamento-icone {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 20px;
+    }
+
+    .agendamento-titulo h3 {
+        font-size: 16px;
+    }
+
+    .agendamento-titulo p {
+        font-size: 12px;
+    }
+
+    .data-selecionada {
+        padding: 15px;
+    }
+
+    .data-selecionada strong {
+        font-size: 14px;
+    }
+
 }

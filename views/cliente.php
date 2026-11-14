@@ -28,7 +28,7 @@
                 <h2>Cadastre Seu Veiculo</h2>
 
                 <p>
-                    Preencha As Informações Abaixo Para Agikizar Nossos Atendimentos.
+                    Preencha As Informações Abaixo Para Agilizar Nossos Atendimentos.
                 </p>
 
             </div>
