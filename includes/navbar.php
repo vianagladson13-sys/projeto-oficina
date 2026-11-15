@@ -8,11 +8,9 @@
         <a class="navbar-brand mf-navbar-brand"
            href="index.php?page=landing">
 
-            <span class="nome-site">Mecanica MF</span>
-
-            <small class="d-block">
-                Centro Automotivo
-            </small>
+           <img src="img/logo-mf.png"
+                 alt="MF Centro Automotivo"
+                 class="logo-navbar">
 
         </a>
 

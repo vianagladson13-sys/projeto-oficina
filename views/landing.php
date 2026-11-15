@@ -37,15 +37,10 @@
             <a href="index.php?page=landing"
                class="mf-header-brand">
 
-                <span class="mf-header-logo">
-                    <i class="bi bi-gear-wide-connected"></i>
-                </span>
-
-                <span class="mf-header-brand-text">
-                    <strong>MECÂNICA <span>MF</span></strong>
-                    <small>TECNOLOGIA AUTOMOTIVA</small>
-                </span>
-
+                <img src="img/logo-mf.png"
+                 alt="MF Centro Automotivo"
+                 class="logo-navbar">
+                 
             </a>
 
             <!-- BOTÃO ENTRAR -->
