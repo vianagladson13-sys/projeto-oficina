@@ -1,16 +1,15 @@
-
-<!-- NAVBAR - MECANICA MF -->
+<!-- NAVBAR - MF AUTOMOTIVA -->
 <nav class="navbar navbar-expand-lg navbar-dark mf-navbar">
 
     <div class="container mf-navbar-container">
 
-        <!-- LOGO / NOME -->
+        <!-- LOGO MF AUTOMOTIVA -->
         <a class="navbar-brand mf-navbar-brand"
-           href="index.php?page=landing">
+            href="index.php?page=landing">
 
-           <img src="img/logo-mf.png"
-                 alt="MF Centro Automotivo"
-                 class="logo-navbar">
+            <img src="assets/img/logo-mf.webp"
+                alt="MF Automotiva"
+                class="logo-navbar">
 
         </a>
 
@@ -35,41 +34,42 @@
 
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="index.php?page=landing">
+                        href="index.php?page=landing">
                         Início
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="index.php?page=cliente">
+                        href="index.php?page=cliente">
                         Clientes
-                    </a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link"
-                       href="index.php?page=aconpanhamento">
-                        Manutencao
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="index.php?page=manutencao">
+                        href="index.php?page=aconpanhamento">
+                        Manutenção
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="index.php?page=manutencao">
                         Diagnóstico via Chat
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="index.php?page=historia">
+                        href="index.php?page=historia">
                         Quem Somos
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link"
-                       href="index.php?page=landing">
+                        href="index.php?page=landing">
                         Sair
                     </a>
                 </li>

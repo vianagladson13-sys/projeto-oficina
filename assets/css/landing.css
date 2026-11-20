@@ -2737,3 +2737,125 @@ footer .bi-whatsapp {
     }
 
 }
+
+/* =========================================================
+   LOGO MF AUTOMOTIVA - LANDING PAGE
+   ========================================================= */
+
+.mf-header-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+
+    flex-shrink: 0;
+}
+
+/* IMAGEM DA LOGO */
+
+.mf-header-logo-img {
+    display: block;
+
+    width: 125px;
+    height: 65px;
+
+    max-width: 100%;
+
+    object-fit: contain;
+    object-position: left center;
+
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+/* EFEITO HOVER */
+
+.mf-header-brand:hover .mf-header-logo-img {
+    transform: scale(1.04);
+}
+
+/* CELULAR */
+
+@media (max-width: 576px) {
+    .mf-header-logo-img {
+        width: 100px;
+        height: 55px;
+    }
+}
+
+/* =========================================================
+   LOGO - CANTO SUPERIOR ESQUERDO
+   ========================================================= */
+
+.mf-header-brand {
+    position: absolute !important;
+
+    top: 5px !important;
+    left: 10px !important;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 1100;
+}
+
+/* TAMANHO DA LOGO */
+
+.mf-header-logo-img {
+    width: 115px;
+    height: 65px;
+
+    object-fit: contain;
+    object-position: left top;
+
+    display: block;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 576px) {
+    .mf-header-brand {
+        top: 5px !important;
+        left: 5px !important;
+    }
+
+    .mf-header-logo-img {
+        width: 95px;
+        height: 55px;
+    }
+}
+.mf-header-brand {
+    display: flex;
+    align-items: center;
+}
+
+.mf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.mf-header-access {
+    margin-left: auto;
+}
+.mf-header-login {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    z-index: 1000;
+}

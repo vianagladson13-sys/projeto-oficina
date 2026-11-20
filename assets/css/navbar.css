@@ -1,6 +1,6 @@
 
 /* =========================================================
-   NAVBAR - MECANICA MF
+   NAVBAR - MF AUTOMOTIVA
    ========================================================= */
 
 :root {
@@ -21,8 +21,8 @@
         var(--mf-preto-secundario)
     );
 
-    min-height: 85px;
-    padding: 12px 0;
+    min-height: 75px;
+    padding: 5px 0;
 
     border-bottom: 3px solid var(--mf-vermelho);
 
@@ -36,57 +36,51 @@
 
 .mf-navbar-container {
     max-width: 1250px;
+    display: flex;
+    align-items: center;
 }
 
-/* LOGO / NOME */
+/* =========================================================
+   LOGO MF AUTOMOTIVA
+   ========================================================= */
 
 .mf-navbar-brand {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 
     margin: 0;
     padding: 0;
 
     text-decoration: none;
-    line-height: 1.2;
+    line-height: 1;
 }
 
-/* NOME MECANICA MF */
+/* TAMANHO DA LOGO */
 
-.mf-navbar-brand .nome-site {
-    color: var(--mf-branco);
+.logo-navbar {
+    width: 95px;
+    height: 60px;
 
-    font-size: 27px;
-    font-weight: 800;
+    max-width: 100%;
 
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    object-fit: contain;
+    object-position: left center;
 
-    transition: 0.3s;
+    display: block;
+
+    transition: transform 0.3s ease;
 }
 
-/* SUBTÍTULO */
+/* EFEITO HOVER */
 
-.mf-navbar-brand small {
-    color: var(--mf-vermelho);
-
-    font-size: 11px;
-    font-weight: 600;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    margin-top: 5px;
+.mf-navbar-brand:hover .logo-navbar {
+    transform: scale(1.05);
 }
 
-/* HOVER LOGO */
-
-.mf-navbar-brand:hover .nome-site {
-    color: var(--mf-vermelho);
-}
-
-/* MENU */
+/* =========================================================
+   MENU
+   ========================================================= */
 
 .mf-navbar .navbar-nav {
     gap: 8px;
@@ -138,7 +132,9 @@
     width: calc(100% - 30px);
 }
 
-/* BOTÃO MOBILE */
+/* =========================================================
+   BOTÃO MOBILE
+   ========================================================= */
 
 .mf-navbar .navbar-toggler {
     border: 1px solid var(--mf-vermelho);
@@ -165,13 +161,18 @@
 }
 
 /* =========================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - TABLETS E CELULARES
    ========================================================= */
 
 @media (max-width: 991px) {
 
     .mf-navbar {
-        padding: 15px 0;
+        padding: 5px 0;
+    }
+
+    .logo-navbar {
+        width: 85px;
+        height: 52px;
     }
 
     .mf-navbar .navbar-collapse {
@@ -194,45 +195,59 @@
 
     .mf-navbar .nav-link {
         padding: 13px 15px !important;
-
         border-radius: 6px;
     }
 
     .mf-navbar .nav-link:hover {
         background: rgba(220, 38, 38, 0.12);
-
         color: var(--mf-branco);
     }
 
     .mf-navbar .nav-link::after {
         display: none;
     }
-
-    .mf-navbar-brand .nome-site {
-        font-size: 23px;
-    }
 }
 
-/* CELULARES */
+/* =========================================================
+   CELULARES
+   ========================================================= */
 
 @media (max-width: 576px) {
 
     .mf-navbar {
-        min-height: 75px;
+        min-height: 65px;
+        padding: 4px 0;
     }
 
-    .mf-navbar-brand .nome-site {
-        font-size: 21px;
-    }
-
-    .mf-navbar-brand small {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+    .logo-navbar {
+        width: 78px;
+        height: 48px;
     }
 
     .mf-navbar-container {
         padding-left: 18px;
         padding-right: 18px;
     }
+}
 
+/* LOGO MAIS PRÓXIMA DA MARGEM ESQUERDA */
+
+.mf-navbar-container {
+    max-width: 100%;
+    padding-left: 10px !important;
+    padding-right: 25px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.mf-navbar-brand {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.logo-navbar {
+    width: 95px;
+    height: 60px;
+    object-fit: contain;
+    object-position: left center;
 }

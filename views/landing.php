@@ -24,39 +24,41 @@
 <body class="bg-light">
 
 
-  
-<!-- CABEÇALHO DA LANDING PAGE -->
 
-<header class="mf-header">
+    <!-- CABEÇALHO DA LANDING PAGE -->
 
-    <nav class="mf-navbar-landing">
+    <header class="mf-header">
 
-        <div class="container mf-header-container">
+        <nav class="mf-navbar-landing">
 
-            <!-- LOGO E NOME -->
-            <a href="index.php?page=landing"
-               class="mf-header-brand">
+            <div class="container mf-header-container">
 
-                <img src="img/logo-mf.png"
-                 alt="MF Centro Automotivo"
-                 class="logo-navbar">
-                 
-            </a>
 
-            <!-- BOTÃO ENTRAR -->
-            <a href="index.php?page=login"
-               class="mf-header-login">
+                <!-- LOGO MF AUTOMOTIVA - LANDING -->
+                <a href="index.php?page=landing"
+                    class="mf-header-brand">
 
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>ENTRAR</span>
+                    <img src="assets/img/logo-mf.webp"
+                        alt="MF Automotiva"
+                        class="mf-header-logo-img">
 
-            </a>
+                </a>
 
-        </div>
 
-    </nav>
+                <!-- BOTÃO ENTRAR -->
+                <a href="index.php?page=login"
+                    class="mf-header-login">
 
-</header>
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>ENTRAR</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
 
 
     <!-- =========================================
@@ -119,41 +121,35 @@
         </section>
 
 
+
         <!-- =====================================================
-         SERVIÇOS PRINCIPAIS
-    ====================================================== -->
+     SERVIÇOS PRINCIPAIS
+====================================================== -->
 
         <section class="mw-services">
 
             <div class="container">
 
+                <!-- TÍTULO -->
                 <div class="mw-section-title">
-
                     <span></span>
-
-                    <h2>
-                        TUDO QUE VOCÊ PRECISA, EM UM SÓ LUGAR
-                    </h2>
-
+                    <h2>TUDO QUE VOCÊ PRECISA, EM UM SÓ LUGAR</h2>
                     <span></span>
-
                 </div>
 
-
-                <div class="row g-4">
+                <!-- CARDS DE SERVIÇOS -->
+                <div class="row g-4 justify-content-center align-items-stretch">
 
                     <!-- CADASTRO -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-10 d-flex">
 
-                        <div class="mw-card">
+                        <div class="mw-card w-100">
 
                             <div class="mw-card-icon">
                                 <i class="bi bi-car-front"></i>
                             </div>
 
-                            <h3>
-                                CADASTRO DE VEÍCULOS
-                            </h3>
+                            <h3>CADASTRO DE VEÍCULOS</h3>
 
                             <p>
                                 Cadastre seu veículo e tenha
@@ -169,46 +165,16 @@
 
                     </div>
 
-
-                    <!-- DIAGNÓSTICO -->
-                    <div class="col-lg-3 col-md-6">
-
-                        <div class="mw-card">
-
-                            <div class="mw-card-icon">
-                                <i class="bi bi-chat-dots"></i>
-                            </div>
-
-                            <h3>
-                                DIAGNÓSTICO VIA CHAT
-                            </h3>
-
-                            <p>
-                                Converse com nossos especialistas
-                                e descubra possíveis problemas.
-                            </p>
-
-                            <a href="manutencao.php">
-                                INICIAR CHAT →
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
                     <!-- AGENDAMENTO -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-10 d-flex">
 
-                        <div class="mw-card">
+                        <div class="mw-card w-100">
 
                             <div class="mw-card-icon">
                                 <i class="bi bi-calendar3"></i>
                             </div>
 
-                            <h3>
-                                AGENDAMENTO ONLINE
-                            </h3>
+                            <h3>AGENDAMENTO ONLINE</h3>
 
                             <p>
                                 Escolha a data e o horário que
@@ -223,23 +189,16 @@
 
                     </div>
 
-
                     <!-- ACOMPANHAMENTO -->
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-10 d-flex">
 
-                        <div class="mw-card">
+                        <div class="mw-card w-100">
 
                             <div class="mw-card-icon">
-
-                                <div class="mw-percent">
-                                    75%
-                                </div>
-
+                                <div class="mw-percent">75%</div>
                             </div>
 
-                            <h3>
-                                ACOMPANHE SEU SERVIÇO
-                            </h3>
+                            <h3>ACOMPANHE SEU SERVIÇO</h3>
 
                             <p>
                                 Acompanhe em tempo real
