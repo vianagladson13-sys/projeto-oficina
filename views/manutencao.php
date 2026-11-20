@@ -603,6 +603,22 @@
                 </div>
 
             </div>
+            <!-- BOTÃO CONFIRMAR AGENDAMENTO -->
+            <div class="confirmar-agendamento-area">
+
+                <button
+                    type="button"
+                    id="btn-confirmar-agendamento"
+                    class="btn-confirmar-agendamento"
+                    disabled
+                    onclick="confirmarAgendamento()">
+
+                    <i class="bi bi-calendar-check"></i>
+                    CONFIRMAR AGENDAMENTO
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -614,122 +630,175 @@
 <!-- AGENDAMENTO DA MANUTENÇÃO -->
 <!-- O JavaScript move este bloco para a lista selecionada -->
 <script>
+    function mostrarManutencao(tipo) {
+        const preventiva = document.getElementById("conteudo-preventiva");
+        const corretiva = document.getElementById("conteudo-corretiva");
+        const botoes = document.querySelectorAll(".btn-manutencao");
 
-function mostrarManutencao(tipo) {
-    const preventiva = document.getElementById("conteudo-preventiva");
-    const corretiva = document.getElementById("conteudo-corretiva");
-    const botoes = document.querySelectorAll(".btn-manutencao");
-
-    if (tipo === "preventiva" && preventiva.classList.contains("ativo")) {
-        preventiva.classList.remove("ativo");
-        preventiva.classList.remove("manutencao-selecionada");
-        document.querySelector(".btn-preventiva").classList.remove("selecionado");
-        resetarBotaoSelecao("preventiva");
-        esconderAgendamento();
-        return;
-    }
-
-    if (tipo === "corretiva" && corretiva.classList.contains("ativo")) {
-        corretiva.classList.remove("ativo");
-        corretiva.classList.remove("manutencao-selecionada");
-        document.querySelector(".btn-corretiva").classList.remove("selecionado");
-        resetarBotaoSelecao("corretiva");
-        esconderAgendamento();
-        return;
-    }
-
-    preventiva.classList.remove("ativo");
-    corretiva.classList.remove("ativo");
-
-    // Limpa a seleção anterior ao trocar de tipo.
-    preventiva.classList.remove("manutencao-selecionada");
-    corretiva.classList.remove("manutencao-selecionada");
-
-    document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
-        btn.classList.remove("selecionado");
-    });
-
-    resetarBotaoSelecao("preventiva");
-    resetarBotaoSelecao("corretiva");
-
-    botoes.forEach(function(botao) { botao.classList.remove("selecionado"); });
-
-    esconderAgendamento();
-
-    if (tipo === "preventiva") {
-        preventiva.classList.add("ativo");
-        document.querySelector(".btn-preventiva").classList.add("selecionado");
-    } else {
-        corretiva.classList.add("ativo");
-        document.querySelector(".btn-corretiva").classList.add("selecionado");
-    }
-}
-
-function selecionarManutencao(tipo) {
-    const agendamento = document.getElementById("agendamento-manutencao");
-    const lista = document.getElementById("conteudo-" + tipo);
-    const botao = document.querySelector(".btn-selecionar-" + tipo);
-
-    if (!agendamento || !lista || !botao) return;
-
-    if (lista.classList.contains("manutencao-selecionada")) {
-        lista.classList.remove("manutencao-selecionada");
-        botao.classList.remove("selecionado");
-        resetarBotaoSelecao(tipo);
-        esconderAgendamento();
-        return;
-    }
-
-    document.querySelectorAll(".conteudo-manutencao").forEach(function(conteudo) {
-        conteudo.classList.remove("manutencao-selecionada");
-    });
-
-    document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
-        btn.classList.remove("selecionado");
-    });
-
-    lista.classList.add("manutencao-selecionada");
-    botao.classList.add("selecionado");
-    botao.querySelector("span").textContent = tipo === "preventiva"
-        ? "Manutenção preventiva selecionada"
-        : "Manutenção corretiva selecionada";
-
-    // Move o calendário para ficar imediatamente abaixo da lista escolhida.
-    lista.appendChild(agendamento);
-    agendamento.classList.add("ativo");
-}
-
-function resetarBotaoSelecao(tipo) {
-    const botao = document.querySelector(".btn-selecionar-" + tipo);
-    if (!botao) return;
-    botao.querySelector("span").textContent = tipo === "preventiva"
-        ? "Selecionar manutenção preventiva"
-        : "Selecionar manutenção corretiva";
-}
-
-function esconderAgendamento() {
-    const agendamento = document.getElementById("agendamento-manutencao");
-    if (agendamento) agendamento.classList.remove("ativo");
-}
-
-const campoData = document.getElementById("data_manutencao");
-const textoData = document.getElementById("texto-data");
-
-if (campoData && textoData) {
-    const hoje = new Date();
-    const ano = hoje.getFullYear();
-    const mes = String(hoje.getMonth() + 1).padStart(2, "0");
-    const dia = String(hoje.getDate()).padStart(2, "0");
-    campoData.min = `${ano}-${mes}-${dia}`;
-
-    campoData.addEventListener("change", function() {
-        if (!this.value) {
-            textoData.textContent = "Nenhuma data selecionada";
+        if (tipo === "preventiva" && preventiva.classList.contains("ativo")) {
+            preventiva.classList.remove("ativo");
+            preventiva.classList.remove("manutencao-selecionada");
+            document.querySelector(".btn-preventiva").classList.remove("selecionado");
+            resetarBotaoSelecao("preventiva");
+            esconderAgendamento();
             return;
         }
-        const partes = this.value.split("-");
-        textoData.textContent = `${partes[2]}/${partes[1]}/${partes[0]}`;
-    });
-}
 
+        if (tipo === "corretiva" && corretiva.classList.contains("ativo")) {
+            corretiva.classList.remove("ativo");
+            corretiva.classList.remove("manutencao-selecionada");
+            document.querySelector(".btn-corretiva").classList.remove("selecionado");
+            resetarBotaoSelecao("corretiva");
+            esconderAgendamento();
+            return;
+        }
+
+        preventiva.classList.remove("ativo");
+        corretiva.classList.remove("ativo");
+
+        // Limpa a seleção anterior ao trocar de tipo.
+        preventiva.classList.remove("manutencao-selecionada");
+        corretiva.classList.remove("manutencao-selecionada");
+
+        document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
+            btn.classList.remove("selecionado");
+        });
+
+        resetarBotaoSelecao("preventiva");
+        resetarBotaoSelecao("corretiva");
+
+        botoes.forEach(function(botao) {
+            botao.classList.remove("selecionado");
+        });
+
+        esconderAgendamento();
+
+        if (tipo === "preventiva") {
+            preventiva.classList.add("ativo");
+            document.querySelector(".btn-preventiva").classList.add("selecionado");
+        } else {
+            corretiva.classList.add("ativo");
+            document.querySelector(".btn-corretiva").classList.add("selecionado");
+        }
+    }
+
+    function selecionarManutencao(tipo) {
+        const agendamento = document.getElementById("agendamento-manutencao");
+        const lista = document.getElementById("conteudo-" + tipo);
+        const botao = document.querySelector(".btn-selecionar-" + tipo);
+
+        if (!agendamento || !lista || !botao) return;
+
+        if (lista.classList.contains("manutencao-selecionada")) {
+            lista.classList.remove("manutencao-selecionada");
+            botao.classList.remove("selecionado");
+            resetarBotaoSelecao(tipo);
+            esconderAgendamento();
+            return;
+        }
+
+        document.querySelectorAll(".conteudo-manutencao").forEach(function(conteudo) {
+            conteudo.classList.remove("manutencao-selecionada");
+        });
+
+        document.querySelectorAll(".btn-selecionar-manutencao").forEach(function(btn) {
+            btn.classList.remove("selecionado");
+        });
+
+        lista.classList.add("manutencao-selecionada");
+        botao.classList.add("selecionado");
+        botao.querySelector("span").textContent = tipo === "preventiva" ?
+            "Manutenção preventiva selecionada" :
+            "Manutenção corretiva selecionada";
+
+        // Move o calendário para ficar imediatamente abaixo da lista escolhida.
+        lista.appendChild(agendamento);
+        agendamento.classList.add("ativo");
+    }
+
+    function resetarBotaoSelecao(tipo) {
+        const botao = document.querySelector(".btn-selecionar-" + tipo);
+        if (!botao) return;
+        botao.querySelector("span").textContent = tipo === "preventiva" ?
+            "Selecionar manutenção preventiva" :
+            "Selecionar manutenção corretiva";
+    }
+
+    function esconderAgendamento() {
+        const agendamento = document.getElementById("agendamento-manutencao");
+        if (agendamento) agendamento.classList.remove("ativo");
+    }
+
+    const campoData = document.getElementById("data_manutencao");
+    const textoData = document.getElementById("texto-data");
+
+    if (campoData && textoData) {
+        const hoje = new Date();
+        const ano = hoje.getFullYear();
+        const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+        const dia = String(hoje.getDate()).padStart(2, "0");
+        campoData.min = `${ano}-${mes}-${dia}`;
+
+        campoData.addEventListener("change", function() {
+            if (!this.value) {
+                textoData.textContent = "Nenhuma data selecionada";
+                return;
+            }
+            const partes = this.value.split("-");
+            textoData.textContent = `${partes[2]}/${partes[1]}/${partes[0]}`;
+        });
+    }
+    // =================================================
+    // HABILITAR BOTÃO APÓS SELECIONAR A DATA
+    // =================================================
+
+    const botaoConfirmar = document.getElementById("btn-confirmar-agendamento");
+
+    if (campoData && botaoConfirmar) {
+
+        campoData.addEventListener("change", function() {
+
+            botaoConfirmar.disabled = !this.value;
+
+        });
+
+    }
+
+
+    // =================================================
+    // CONFIRMAR AGENDAMENTO
+    // =================================================
+
+    function confirmarAgendamento() {
+
+        const data = document.getElementById("data_manutencao").value;
+
+        if (!data) {
+            alert("Selecione uma data para continuar.");
+            return;
+        }
+
+        const manutencaoSelecionada = document.querySelector(
+            ".conteudo-manutencao.manutencao-selecionada"
+        );
+
+        if (!manutencaoSelecionada) {
+            alert("Selecione o tipo de manutenção.");
+            return;
+        }
+
+        const tipo = manutencaoSelecionada.id === "conteudo-preventiva" ?
+            "Preventiva" :
+            "Corretiva";
+
+        const partes = data.split("-");
+        const dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+
+        alert(
+            "Agendamento confirmado!\n\n" +
+            "Manutenção: " + tipo + "\n" +
+            "Data: " + dataFormatada
+        );
+
+    }
 </script>

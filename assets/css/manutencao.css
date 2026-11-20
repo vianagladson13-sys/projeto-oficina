@@ -966,3 +966,45 @@
     }
 
 }
+/* ÁREA DO BOTÃO */
+.confirmar-agendamento-area {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* BOTÃO CONFIRMAR */
+.btn-confirmar-agendamento {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 25px;
+
+    background: #198754;
+    color: #fff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-confirmar-agendamento:hover:not(:disabled) {
+    background: #146c43;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 135, 84, .25);
+}
+
+.btn-confirmar-agendamento:disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+    opacity: .7;
+}
+
+.btn-confirmar-agendamento i {
+    margin-right: 8px;
+}
